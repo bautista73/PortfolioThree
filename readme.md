@@ -1,4 +1,4 @@
-# Three.js Journey
+# Portfolio V3 with Node.js + Vite & Three.js
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
