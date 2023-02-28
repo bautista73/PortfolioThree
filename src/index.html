@@ -4,9 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brandon's ThreeJS Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="./style.css">
-</head>
+    <style lang="scss"></style>
+    <link rel="stylesheet" type="text/css" href="/src/style.css" />
+</head> 
 <body>
+    <header>
+        <nav id="Navigation">
+            <div class="nav-wrapper">
+                <div class="nav">
+                    <div class="nav-left bubble-wrapper">
+                        <div id="defaultOpen" class="nav-bubble nav-hover tablinks" onclick="openTab(event, 'Home')">
+                            <span class="nav-title">Brandon Bautista</span>
+                            <!-- <div class="arrow right">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#f3f3f3" stroke-width="1" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="nav-middle bubble-wrapper">
+
+                    </div>
+                    <div class="nav-right bubble-wrapper">
+                        <div id="portfolioOpen" class="nav-bubble nav-banner nav-hover tablinks" onclick="openTab(event, 'Portfolio')">
+                            <span class="nav-title">Works</span>
+                        </div>
+                        <div id="aboutOpen" class="nav-bubble nav-about nav-hover tablinks" onclick="openTab(event, 'About')">
+                            <span class="nav-title">About</span>
+                        </div>
+                        <div id="contactOpen" class="nav-bubble nav-contact nav-hover  tablinks" onclick="openTab(event, 'Contact')">
+                            <span class="nav-title" >Contact</span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="hr"/>
+            </div>
+        </nav>
+    </header>
     
     <script type="module" src="./script.js"></script>
 </body>

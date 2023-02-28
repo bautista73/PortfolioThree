@@ -1,3 +1,5 @@
+import './style.scss';
+
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
@@ -278,5 +280,17 @@ class Scene {
     this.renderer.render(this.scene, this.camera);
   }  
 }
+function moveCamera() {
+    const t = document.body.getBoundingClientRect().top;
+    planet.rotation.x += 0.05;
+    planet.rotation.y += 0.075;
+    planet.rotation.z += 0.05;
 
+    camera.position.z = t * -0.01;
+    camera.position.x = t * -0.0002;
+    camera.rotation.y = t * -0.0002;
+}
+ 
+document.body.onscroll = moveCamera
+ 
 new Scene();
