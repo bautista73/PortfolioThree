@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Michroma&display=swap');
 
-$base-dark: #0f0f0f;
+$base-dark: #0a0a0a;
 $base-light: #eaeaea;
 $base-gray: #393939;
 $base-light-gray: #898989;
@@ -37,13 +37,16 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: $base-dark;
     color: $base-light;
-    overflow:hidden
 }
 
 canvas {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin: auto;
     display: block;
 }
-
 
 #Navigation {
     position: relative;
@@ -55,7 +58,7 @@ canvas {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(60px, 1fr));
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: -0.5px;
     max-width: 1920px;
     margin: auto;
@@ -85,6 +88,75 @@ canvas {
                 align-items: center;
                 justify-content: flex-end;
                 gap: 22px;
+            }
+        }
+    }
+}
+
+#Home {
+    margin-top: 80px;
+    width: 100%;
+    max-width: 1920px;
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(300px, 700px));
+    margin: auto;
+    pointer-events: none;
+    z-index: 9999;
+    background-color: transparent;
+    #hero {
+        width: 100%;
+        height: 100%;
+        .hero-text {
+            width: 100%;
+            height: 100%;
+            line-height: 95px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+                font-size: 100px;
+                letter-spacing: -5px;
+        }
+    }
+}
+
+#Footer {
+    position: relative;
+    max-width: 1920px;
+    margin: auto;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(60px, 1fr));
+    padding: 0 20px;
+
+    .footer-wrapper {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        .footer-span-wrapper {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: -0.5px;
+            .tabnum {
+                display: flex;
+                align-items: center;
+                gap: 2px;
+            }
+            .span-name {
+                position: absolute;
+                left: 45.7%;
+            }
+            .las {
+                font-size: 14px;
             }
         }
     }
