@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Michroma&display=swap');
 
+
 $base-dark: #0a0a0a;
 $base-light: #eaeaea;
 $base-gray: #393939;
@@ -37,6 +38,8 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: $base-dark;
     color: $base-light;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .webgl-wrapper {
@@ -47,6 +50,7 @@ body {
     left: 0;
     right: 0;
     margin: auto;
+    z-index: 1;
     #webgl {
         width: 100%;
         height: 100%;
@@ -116,45 +120,46 @@ body {
     grid-template-rows: repeat(auto-fit, minmax(300px, 790px));
     background-color: transparent;
     padding: $padding-l;
-    z-index: 2;
     pointer-events: none;
     #hero {
         width: 100%;
         height: 100%;
-        background-color: transparent;
+        // background-color: transparent;
 
-        .hero-text {
+        .hero-text-blend-wrap {
+            position: absolute;
             width: 100%;
             height: 100%;
-            line-height: 100px;
-            padding: 50px;
+            pointer-events: none;
+            mix-blend-mode: difference;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
+            line-height: 10px;
+            z-index: 9999;
 
-            background-image: linear-gradient(to right, 
-            rgba(255,255,255,0.85), 
-            rgba(255,255,255,1), 
-            rgba(255,255,255, 1));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            backdrop-filter: blur(25px);
-            color: white;
-            
+            .hero-text {
+                padding: 50px;
+                color: white;
+                font-size: 120px;
+                letter-spacing: -5px;
+            }
 
-            font-size: 120px;
-            letter-spacing: -5px;
-
-            span:nth-child(1) {
+            & :nth-child(1) {
+                padding-left: 100px;
+            }
+            & :nth-child(2) {
                 padding-left: 50px;
             }
-            span:nth-child(2) {
-                padding-left: 0px;
-            }
-            span:nth-child(3) {
+            & :nth-child(3) {
                 padding-left: 150px;
             }
+        }
+
+        .hero-spacer {
+            height: 100%;
+            width: 100%;
         }
        .hero-nav-wrapper {
             display: flex;
@@ -179,19 +184,19 @@ body {
 }
 
 #Works {
-    margin-top: 1000px;
     width: 100%;
     max-width: 1920px;
     display: grid;
     align-items: flex-start;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(300px, 700px));
+    grid-template-rows: repeat(auto-fit, minmax(300px, 8000px));
+    background-color: red;
 }
 
 #Footer {
     position: relative;
     max-width: 1920px;
-    margin: auto;
+    margin: 2000px auto auto auto; //change this
     width: 100%;
     display: grid;
     align-items: center;
@@ -209,7 +214,7 @@ body {
             justify-content: space-between;
             align-items: center;
             text-transform: uppercase;
-            font-size: 14px;
+            font-size: 13px;
             letter-spacing: -0.5px;
             .tabnum {
                 display: flex;
@@ -219,6 +224,8 @@ body {
             .span-name {
                 position: absolute;
                 left: 45.7%;
+                display: flex;
+                align-items: center;
             }
             .las {
                 font-size: 14px;
