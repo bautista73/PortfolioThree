@@ -189,19 +189,20 @@ const fragmentShader = `
     gl_FragColor = vec4(color, 1.0);
   }  
 `;
+
+
 class Scene {
   constructor() {
-    const screenWidth = window.innerWidth * 0.75;
-    const screenHeight = window.innerHeight * 0.75;
+    const canvas = document.querySelector('#webgl');
 
-    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, canvas });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
-    this.renderer.setSize(screenWidth, screenHeight);
+    this.renderer.setSize(canvas.clientWidth, canvas.clientHeight);
     // this.renderer.setClearColor('#0a0a0a', 1);
     
     this.camera = new THREE.PerspectiveCamera(
-      32,
-      screenWidth / screenHeight,
+      33,
+      canvas.clientWidth / canvas.clientHeight,
       0.1,
       1000
     );
@@ -213,21 +214,17 @@ class Scene {
     this.clock = new THREE.Clock();
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.enableZoom = false;
+    this.controls.enablePan = false;
+    this.controls.rotateSpeed = 0.2; 
+    this.controls.dampingFactor = 0.05;
 
     this.init();
     this.animate();    
   }
   
   init() {
-    this.addCanvas();
     this.addElements();
     this.addEvents();
-  } 
-  
-  addCanvas() {
-    const canvas = this.renderer.domElement;
-    canvas.classList.add('webgl');
-    document.body.appendChild(canvas);
   }  
   
   addElements() {
@@ -255,11 +252,12 @@ class Scene {
   }  
   
   resize() {
-    const screenWidth = window.innerWidth * 0.75;
-    const screenHeight = window.innerHeight * 0.75;
+    const canvas = this.renderer.domElement;
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
 
-    this.camera.aspect = screenWidth / screenHeight;
-    this.renderer.setSize(screenWidth, screenHeight);
+    this.camera.aspect = canvas.clientWidth / canvas.clientHeight;
+    this.renderer.setSize(canvas.clientWidth, canvas.clientHeight);
     this.renderer.setPixelRatio(window.devicePixelRatio);
 
     this.camera.updateProjectionMatrix();
@@ -276,6 +274,7 @@ class Scene {
     // Update uniforms
     this.mesh.material.uniforms.uTime.value = this.clock.getElapsedTime();
     this.mesh.material.uniforms.uSpeed.value = settings.speed;    
+    this.mesh.material.uniforms.uNoiseDensity.value
     this.mesh.material.uniforms.uNoiseDensity.value = settings.density;
     this.mesh.material.uniforms.uNoiseStrength.value = settings.strength;
     this.mesh.material.uniforms.uFrequency.value = settings.frequency;
@@ -287,6 +286,109 @@ class Scene {
 }
 
 new Scene();
+
+
+// class Scene {
+//   constructor() {
+//     const screenWidth = window.innerWidth * 0.8;
+//     const screenHeight = window.innerHeight * 0.8;
+
+//     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+//     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+//     this.renderer.setSize(screenWidth, screenHeight);
+//     // this.renderer.setClearColor('#0a0a0a', 1);
+    
+//     this.camera = new THREE.PerspectiveCamera(
+//       33,
+//       screenWidth / screenHeight,
+//       0.1,
+//       1000
+//     );
+
+//     this.camera.position.set(0, 0, 4);    
+    
+//     this.scene = new THREE.Scene();
+    
+//     this.clock = new THREE.Clock();
+//     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+//     this.controls.enableZoom = false;
+//     this.controls.enablePan = false;
+//     this.controls.rotateSpeed = 0.1; // set rotation speed
+//     this.controls.dampingFactor = 0.05; // set damping factor
+
+//     this.init();
+//     this.animate();    
+//   }
+  
+//   init() {
+//     this.addCanvas();
+//     this.addElements();
+//     this.addEvents();
+//   } 
+  
+//   addCanvas() {
+//     const canvas = this.renderer.domElement;
+//     canvas.classList.add('webgl');
+//     document.body.appendChild(canvas);
+//   }  
+  
+//   addElements() {
+//     const geometry = new THREE.IcosahedronBufferGeometry(1, 64);
+//     const material = new THREE.ShaderMaterial({
+//       vertexShader,
+//       fragmentShader,
+//       uniforms: {
+//         uTime: { value: 0 },
+//         uSpeed: { value: settings.speed },
+//         uNoiseDensity: { value: settings.density },
+//         uNoiseStrength: { value: settings.strength },
+//         uFrequency: { value: settings.frequency },
+//         uAmplitude: { value: settings.amplitude },
+//         uIntensity: { value: settings.intensity },
+//       },
+//       wireframe: true,
+//     });
+//     this.mesh = new THREE.Mesh(geometry, material);
+//     this.scene.add(this.mesh);
+//   }
+  
+//   addEvents() {
+//     window.addEventListener('resize', this.resize.bind(this));
+//   }  
+  
+//   resize() {
+//     const screenWidth = window.innerWidth * 0.8;
+//     const screenHeight = window.innerHeight * 0.8;
+
+//     this.camera.aspect = screenWidth / screenHeight;
+//     this.renderer.setSize(screenWidth, screenHeight);
+//     this.renderer.setPixelRatio(window.devicePixelRatio);
+
+//     this.camera.updateProjectionMatrix();
+//   }
+  
+//   animate() {
+//     requestAnimationFrame(this.animate.bind(this));
+//     this.render();
+//   }
+  
+//   render() {
+//     this.controls.update();
+    
+//     // Update uniforms
+//     this.mesh.material.uniforms.uTime.value = this.clock.getElapsedTime();
+//     this.mesh.material.uniforms.uSpeed.value = settings.speed;    
+//     this.mesh.material.uniforms.uNoiseDensity.value = settings.density;
+//     this.mesh.material.uniforms.uNoiseStrength.value = settings.strength;
+//     this.mesh.material.uniforms.uFrequency.value = settings.frequency;
+//     this.mesh.material.uniforms.uAmplitude.value = settings.amplitude;
+//     this.mesh.material.uniforms.uIntensity.value = settings.intensity;
+
+//     this.renderer.render(this.scene, this.camera);
+//   }  
+// }
+
+// new Scene();
 
 
 // class Scene {

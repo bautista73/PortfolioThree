@@ -39,13 +39,22 @@ body {
     color: $base-light;
 }
 
-canvas {
+.webgl-wrapper {
+    width: 100%;
+    height: 700px;
     position: absolute;
     top: 100px;
     left: 0;
     right: 0;
     margin: auto;
-    display: block;
+    #webgl {
+        width: 100%;
+        height: 100%;
+        max-width: 100vw;
+        max-height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 #Navigation {
@@ -94,33 +103,89 @@ canvas {
 }
 
 #Home {
-    margin-top: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 1920px;
+    margin: auto;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(300px, 790px));
+    background-color: transparent;
+    padding: $padding-l;
+    z-index: 2;
+    pointer-events: none;
+    #hero {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+
+        .hero-text {
+            width: 100%;
+            height: 100%;
+            line-height: 100px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+
+            background-image: linear-gradient(to right, 
+            rgba(255,255,255,0.85), 
+            rgba(255,255,255,1), 
+            rgba(255,255,255, 1));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            backdrop-filter: blur(25px);
+            color: white;
+            
+
+            font-size: 120px;
+            letter-spacing: -5px;
+
+            span:nth-child(1) {
+                padding-left: 50px;
+            }
+            span:nth-child(2) {
+                padding-left: 0px;
+            }
+            span:nth-child(3) {
+                padding-left: 150px;
+            }
+        }
+       .hero-nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: -0.5px;
+            margin-bottom: 25px;
+
+            .hero-nav-left {
+                display: flex;
+                align-items: flex-end;
+                gap: 4px;
+            }
+            .hero-nav-right {
+                display: flex;
+                gap: 22px;
+            }
+       }
+    }
+}
+
+#Works {
+    margin-top: 1000px;
     width: 100%;
     max-width: 1920px;
     display: grid;
     align-items: flex-start;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(300px, 700px));
-    margin: auto;
-    pointer-events: none;
-    z-index: 9999;
-    background-color: transparent;
-    #hero {
-        width: 100%;
-        height: 100%;
-        .hero-text {
-            width: 100%;
-            height: 100%;
-            line-height: 95px;
-            padding: 50px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-                font-size: 100px;
-                letter-spacing: -5px;
-        }
-    }
 }
 
 #Footer {
