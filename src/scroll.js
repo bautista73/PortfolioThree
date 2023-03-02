@@ -4,6 +4,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const recentProjects = gsap.timeline({
+    defaults: {
+      duration: 1,
+      ease: 'power3.inOut',
+    },
+});
 const projects = document.querySelectorAll('.project');
 
 projects.forEach((project) => {

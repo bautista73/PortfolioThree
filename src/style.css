@@ -179,7 +179,6 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: transform 0.1s ease;
   filter: brightness(50%);
   border-radius: 5px;
 }
@@ -195,7 +194,6 @@ body {
   align-items: flex-start;
   padding: 20px;
   color: gray;
-  transition: all 0.3s ease;
   z-index: 999;
 }
 #Works .recent-projects .project .project-info h2 {
