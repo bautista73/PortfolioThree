@@ -14,7 +14,6 @@ const lenis = new Lenis({
   infinite: false,
 })
 
-//get scroll value
 lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
   console.log({ scroll, limit, velocity, direction, progress })
 })
@@ -25,3 +24,6 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf)
+
+
+

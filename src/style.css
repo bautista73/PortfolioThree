@@ -11,6 +11,7 @@ body {
   color: #eaeaea;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .webgl-wrapper {
@@ -145,19 +146,75 @@ body {
 }
 
 #Works {
+  position: relative;
+  margin-top: 1000px;
   width: 100%;
   max-width: 1920px;
   display: grid;
   align-items: flex-start;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(300px, 8000px));
-  background-color: red;
+  grid-template-rows: repeat(auto-fit, minmax(340px, 1fr));
+}
+#Works .recent-projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  height: auto;
+}
+#Works .recent-projects .project {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+#Works .recent-projects .project img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.1s ease;
+  filter: brightness(50%);
+  border-radius: 5px;
+}
+#Works .recent-projects .project .project-info {
+  position: absolute;
+  top: 0;
+  left: -200px;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  color: gray;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+#Works .recent-projects .project .project-info h2 {
+  font-size: 80px;
+  margin-bottom: 10px;
+  letter-spacing: -3px;
+  line-height: 90px;
+}
+#Works .recent-projects .project .project-info p {
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
 }
 
 #Footer {
   position: relative;
   max-width: 1920px;
-  margin: 2000px auto auto auto;
+  margin: auto;
   width: 100%;
   display: grid;
   align-items: center;
