@@ -6,40 +6,109 @@
     <title>Brandon's ThreeJS Portfolio</title>
     <style lang="scss"></style>
     <link rel="stylesheet" type="text/css" href="/src/style.css" />
+    <link rel="stylesheet" type="text/css" href="./shaders-on-scroll.sass"> 
 </head> 
 <body>
     <header>
-        <nav id="Navigation">
-            <div class="nav-wrapper">
-                <div class="nav">
-                    <div class="nav-left bubble-wrapper">
-                        <div id="defaultOpen" class="nav-bubble nav-hover tablinks" onclick="openTab(event, 'Home')">
-                            <span class="nav-title">brandon bautista</span>
-                            <!-- <div class="arrow right">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#f3f3f3" stroke-width="1" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
-                            </div> -->
-                        </div>
-                    </div>
-                    <div class="nav-middle bubble-wrapper">
-
-                    </div>
-                    <div class="nav-right bubble-wrapper">
-                        <div id="portfolioOpen" class="nav-bubble nav-banner nav-hover tablinks" onclick="openTab(event, 'Portfolio')">
-                            <span class="nav-title">works</span>
-                        </div>
-                        <div id="aboutOpen" class="nav-bubble nav-about nav-hover tablinks" onclick="openTab(event, 'About')">
-                            <span class="nav-title">about</span>
-                        </div>
-                        <div id="contactOpen" class="nav-bubble nav-contact nav-hover  tablinks" onclick="openTab(event, 'Contact')">
-                            <span class="nav-title" >contact</span>
-                        </div>
-                    </div>
-                </div>
-                <hr/>
+        <div class="frame">
+            <div class="frame__title-wrap">
+                <h1 class="frame__title">BRANDON BAUTISTA</h1>
             </div>
-        </nav>
+            <nav class="frame__links">
+                <a href="#">Works</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
     </header>
     <main>
+        <div class="content">
+            <div class="scroll__stage">
+                <div class="scroll__content">
+                    <section class="section">
+                        <div class="section__title">
+                            <h2 class="section__title-text">
+                                <span class="section__title-text-one">Interactive</span>
+                                <span class="section__title-text-two">Front-End</span>
+                                <span class="section__title-text-three">Developer</span>
+                            </h2>
+                        </div>
+                    </section>
+                    <section class="home-footer">
+                        <div class="home-footer__wrapper">
+                            <div class="home-footer__wrapper__left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#eaeaea" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M12 5v13M5 12l7 7 7-7"/></svg>
+                                <span class="home-footer__wrapper__left-text">Selected Works</span>
+                            </div>
+                            <div class="home-footer__wrapper__right">
+                                <a href="#" class="home-footer__wrapper__right-text">LinkedIn</a>
+                                <a href="#" class="home-footer__wrapper__right-text">GitHub</a>
+                                <a href="#" class="home-footer__wrapper__right-text">Twitter</a>
+                            </div>
+                        </div>
+                        <hr>
+                    </section>
+                    <section class="section">
+                        <div class="section__title">
+                            <h1 class="section__title-number">02</h1>
+                            <h2 class="section__title-text">Naos</h2>
+                        </div>
+                        <p class="section__paragraph">
+                            Let me take you on a little trip – 
+                            We're gonna travel faster than light – 
+                            And you'll go anywhere you want to decide<br>
+                            <a href="https://dimorph.ch/" class="section__button">Discover</a>
+                        </p>
+                    </section>
+                    <section class="section">
+                        <div class="section__title">
+                            <h1 class="section__title-number">03</h1>
+                            <h2 class="section__title-text">Chara</h2>
+                        </div>
+                        <p class="section__paragraph">
+                            Close your eyes now – 
+                            And give in to the night – 
+                            Soar above the stars – 
+                            Forget what's behind<br>
+                            <a href="https://dimorph.ch/" class="section__button">Discover</a>
+                        </p>
+                    </section>
+                    <section class="section">
+                        <div class="section__title">
+                            <h1 class="section__title-number">03</h1>
+                            <h2 class="section__title-text">Chara</h2>
+                        </div>
+                        <p class="section__paragraph">
+                            Close your eyes now – 
+                            And give in to the night – 
+                            Soar above the stars – 
+                            Forget what's behind<br>
+                            <a href="https://dimorph.ch/" class="section__button">Discover</a>
+                        </p>
+                    </section>
+                    <section class="section">
+                        <div class="section__title">
+                            <h1 class="section__title-number">03</h1>
+                            <h2 class="section__title-text">Chara</h2>
+                        </div>
+                        <p class="section__paragraph">
+                            Close your eyes now – 
+                            And give in to the night – 
+                            Soar above the stars – 
+                            Forget what's behind<br>
+                            <a href="https://dimorph.ch/" class="section__button">Discover</a>
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+    <!-- <main>
         <div class="webgl-wrapper">
             <canvas id="webgl"></canvas>
         </div>
@@ -85,7 +154,7 @@
                 </div>
                 
                 <div class="project">
-                    <img src="./img/displayme.webp" alt="Project 3">
+                    <img src="./img/displayme.webp" alt="Project 3" loading="lazy">
                     <div class="project-info">
                         <h2>DisplayMe</h2>
                         <p>API</p>
@@ -93,7 +162,7 @@
                 </div>
 
                 <div class="project">
-                    <img src="./img/deskclub.webp" alt="Project 4">
+                    <img src="./img/deskclub.webp" alt="Project 4" loading="lazy">
                     <div class="project-info">
                       <h2>Desk & Club</h2>
                       <p>Website Design</p>
@@ -101,7 +170,7 @@
                 </div>
 
                 <div class="project">
-                    <img src="./img/liftify.webp" alt="Project 5">
+                    <img src="./img/liftify.webp" alt="Project 5" loading="lazy">
                     <div class="project-info">
                       <h2>Liftify</h2>
                       <p>Application</p>
@@ -110,25 +179,26 @@
                   
               </section>              
         </article>
-    </main>
+    </main> -->
     <footer>
-        <section id="Footer">
+        <!-- <section id="Footer">
             <div class="footer-wrapper">
                 <hr class="hr"/>
                 <div class="footer-span-wrapper">
                     <span id="homeTabNum" class="tabnum">01 <i class="las la-asterisk"></i> HOME</span>
-                    <!--
+                    
                     <span id="portfolioTabNum" class="tabnum">02 <i class="las la-asterisk"></i> PORTFOLIO</span>
                     <span id="aboutTabNum" class="tabnum">03 <i class="las la-asterisk"></i> ABOUT</span>
-                    <span id="contactTabNum" class="tabnum">04 <i class="las la-asterisk"></i> CONTACT</span> -->
+                    <span id="contactTabNum" class="tabnum">04 <i class="las la-asterisk"></i> CONTACT</span>
                     <span class="span-name">Brandon Bautista<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#eaeaea" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="arcs"><circle cx="12" cy="12" r="1"></circle></svg>B<sup>2</sup></span>
                     <span>Portfolio 2023</span>
                 </div>
             </div>
-        </section>
+        </section> -->
     </footer>
-    <script type="module" src="./scroll.js"></script>
-    <script type="module" src="./index.js"></script>
     <script type="module" src="./script.js"></script>
+    <!-- <script type="module" src="./scroll.js"></script>
+    <script type="module" src="./index.js"></script>
+    <script type="module" src="./script.js"></script> -->
 </body>
 </html>
