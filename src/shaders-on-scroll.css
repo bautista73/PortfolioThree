@@ -33,7 +33,6 @@ h2 {
 
 body {
   width: 100%;
-  max-width: 1000px;
   height: 100vh;
   overscroll-behavior: none;
   color: white;
@@ -46,7 +45,8 @@ body::-webkit-scrollbar {
 
 canvas.webgl {
   pointer-events: none;
-  mix-blend-mode: screen;
+  mix-blend-mode: none;
+  z-index: -1;
 }
 @media (max-width: 64em) {
   canvas.webgl {

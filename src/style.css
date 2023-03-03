@@ -117,13 +117,13 @@
 
 body {
   margin: 0;
-  --color-text: white;
+  --color-text: $base-light;
   --color-bg: black;
   --color-1: blue;
   --color-2: purple;
   --color-link: white;
   --color-link-hover: white;
-  color: var(--color-text);
+  color: #eaeaea;
   background-color: var(--color-bg);
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -289,12 +289,14 @@ a:focus:not(:focus-visible) {
 }
 .hero__section__title {
   font-size: min(8vw, 6rem);
-  opacity: 0.95;
+  opacity: 0.9;
   width: min(80vw, 90rem);
 }
 .hero__section__title-text {
   display: flex;
   flex-direction: column;
+  font-weight: 600;
+  gap: 5px;
 }
 .hero__section__title-text-one {
   padding-left: 50px;
@@ -307,25 +309,45 @@ a:focus:not(:focus-visible) {
 }
 
 .about__section {
+  position: relative;
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 50px;
-  min-height: 120vh;
+  min-height: 100vh;
 }
-.about__section__text {
+.about__section .tab__number {
+  width: 80%;
+  position: absolute;
+  top: 3%;
+  font-size: 1rem;
+}
+.about__section hr {
+  width: 60%;
+  opacity: 0.3;
+}
+.about__section .background {
+  height: auto;
   width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 100px 50px;
+  background-color: rgba(0, 0, 0, 0.95);
+}
+.about__section__text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-size: min(4vw, 5rem);
-  line-height: 10px;
   gap: 15px;
   opacity: 0.9;
+  padding-bottom: 10%;
 }
 .about__section__text-font {
   font-weight: 500;
@@ -357,16 +379,17 @@ a:focus:not(:focus-visible) {
   width: 90%;
 }
 .about__section__sub {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
+  line-height: 40px;
 }
 .about__section__sub-p {
-  font-size: 1.5rem;
-  font-weight: 300;
+  font-size: 1.7rem;
+  font-weight: 400;
   max-width: 80ch;
 }
 

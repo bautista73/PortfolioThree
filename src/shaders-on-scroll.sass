@@ -38,7 +38,6 @@ body
   @extend %font-regular
 
   width: 100%
-  max-width: 1000px
   height: 100vh
   overscroll-behavior: none
   color: $color-white
@@ -56,7 +55,8 @@ canvas.webgl
   @extend %fixed
 
   pointer-events: none
-  mix-blend-mode: screen
+  mix-blend-mode: none
+  z-index: -1
 
   @media (max-width: 64em)
       opacity: .7

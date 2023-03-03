@@ -23,21 +23,16 @@ void main() {
 
   float distort = vDistortion * 2.;
 
-  vec3 brightness = vec3(1.0, 0.0, 0.0);
-  vec3 oscilation = vec3(0.5, 0.5, 0.5); 
-  vec3 contrast = vec3(0.5, 0.5, 0.5);
-  vec3 phase = vec3(0.90, 0.50, 0.90); 
-
-  //base code (purple)
-  // vec3 brightness = vec3(.1, .1, .9);
-  // vec3 contrast = vec3(.3, .3, .3);
-  // vec3 oscilation = vec3(.5, .5, .9);
-  // vec3 phase = vec3(.9, .1, .8);
+  vec3 brightness = vec3(0.1, 0.2, 0.9);
+  vec3 contrast = vec3(0.2, 0.4, 0.1);
+  vec3 oscilation = vec3(0.2, 0.8, 0.5);
+  vec3 phase = vec3(0.5, 0.3, 0.7);
+ 
  
   vec3 color = cosPalette(distort, brightness, contrast, oscilation, phase);
   
   gl_FragColor = vec4(color, vDistortion);
-  gl_FragColor += vec4(min(uDeepColor, 1.0), .0, 0.1, min(uOpacity, 1.));
+  gl_FragColor += vec4(0.0, min(uDeepColor, 0.7), min(uDeepColor * 1.2, 0.9), min(uOpacity, 1.));
 }
 `
 
@@ -222,7 +217,7 @@ class ScrollStage {
       },
       // fragment
       uDeepColor: {  // max 1
-        start: 1,
+        start: .1,
         end: 0
       },
       uOpacity: {  // max 1
@@ -241,7 +236,7 @@ class ScrollStage {
     this.canvas = this.renderer.domElement
 
     this.camera = new THREE.PerspectiveCamera( 
-      75, 
+      80, 
       this.viewport.width / this.viewport.height, 
       .1, 
       10
