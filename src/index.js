@@ -1,3 +1,5 @@
+import { gsap } from "gsap";
+
 let elements = document.querySelectorAll('.rolling-text');
 
 elements.forEach(element => {
@@ -19,5 +21,26 @@ elements.forEach(element => {
 });
 
 
+var selectedWorks = document.getElementById("selected-works");
 
+gsap.set(selectedWorks, {opacity: 1});
 
+window.addEventListener("scroll", function() {
+  if (window.pageYOffset > 0) {
+    gsap.to(selectedWorks, {opacity: 0, duration: 0.5});
+  } else {
+    gsap.to(selectedWorks, {opacity: 1, duration: 0.5});
+  }
+});
+
+var socialWrap = document.getElementById("social-wrap");
+
+gsap.set(socialWrap, {opacity: 1});
+
+window.addEventListener("scroll", function() {
+  if (window.pageYOffset > 0) {
+    gsap.to(socialWrap, {opacity: 0, duration: 0.5});
+  } else {
+    gsap.to(socialWrap, {opacity: 1, duration: 0.5});
+  }
+});

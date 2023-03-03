@@ -102,7 +102,6 @@ canvas.webgl
 
   &:nth-child(even)
     flex-direction: row-reverse
-    background: $color-1
     
     .section__title
       text-align: left
@@ -123,23 +122,27 @@ canvas.webgl
       width: 100%
     
     &-number
-      font-size: min(36vw, 24rem)
-      
+      font-size: min(1.5vw, 3rem)
+
+    &-main
+      padding-left: 20px
+      font-size: min(95px, 16rem)
+
     &-text
       font-size: min(8vw, 12rem)
 
       &-one
-        padding-left: 150px
+        padding-left: 147px
       &-two
         padding-left: 50px
       &-three
-        padding-left: 200px
+        padding-left: 203px
     
 
   &__paragraph
     align-self: flex-end
     max-width: 20ch
-    font-size: 1.4rem
+    font-size: min(1.5vw, 3rem)
 
     @media (max-width: 64em)
       font-size: 1.2rem

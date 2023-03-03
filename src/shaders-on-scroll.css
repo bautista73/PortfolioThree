@@ -90,7 +90,6 @@ canvas.webgl {
 }
 .section:nth-child(even) {
   flex-direction: row-reverse;
-  background: #010101;
 }
 .section:nth-child(even) .section__title {
   text-align: left;
@@ -114,24 +113,28 @@ canvas.webgl {
   }
 }
 .section__title-number {
-  font-size: min(36vw, 24rem);
+  font-size: min(1.5vw, 3rem);
+}
+.section__title-main {
+  padding-left: 20px;
+  font-size: min(95px, 16rem);
 }
 .section__title-text {
   font-size: min(8vw, 12rem);
 }
 .section__title-text-one {
-  padding-left: 150px;
+  padding-left: 147px;
 }
 .section__title-text-two {
   padding-left: 50px;
 }
 .section__title-text-three {
-  padding-left: 200px;
+  padding-left: 203px;
 }
 .section__paragraph {
   align-self: flex-end;
   max-width: 20ch;
-  font-size: 1.4rem;
+  font-size: min(1.5vw, 3rem);
 }
 @media (max-width: 64em) {
   .section__paragraph {
