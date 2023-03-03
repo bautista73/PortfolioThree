@@ -166,21 +166,4 @@ canvas.webgl {
   height: 0.5rem;
   width: 100%;
   text-align: center;
-}
-
-.home-footer__wrapper {
-  padding: 0 26px;
-  display: flex;
-  justify-content: space-between;
-  text-transform: uppercase;
-  font-size: 13px;
-}
-.home-footer__wrapper__right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.home-footer__wrapper__left {
-  display: flex;
-  align-items: center;
 }/*# sourceMappingURL=shaders-on-scroll.css.map */

@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 
 $base-dark: #0a0a0a;
 $base-light: #eaeaea;
@@ -17,6 +18,45 @@ $font-size-xl: 64px;
 $font-size-l: 32px;
 $font-size-m: 24px;
 $font-size-s: 16px;
+
+
+$delay: 0.015s;
+$duration: 0.6s;
+$easing: cubic-bezier(0.76, 0, 0.24, 1);
+
+.rolling-text{
+    display: inline-block;
+    $font-size: 13px;
+    font-size: $font-size;
+    line-height: $font-size * 1.5;
+    letter-spacing: -0.5px;
+    height: $font-size * 1.5;
+    text-decoration: none;
+    overflow: hidden;
+    color: $base-light;
+    
+    &:hover,
+    &.play{
+      .letter{
+        transform: translateY(-100%);
+      }
+    }
+    
+    .block:last-child{
+      color: $base-light-gray;
+    }
+    
+    .letter{
+      display: inline-block;
+      transition: transform $duration $easing;
+    }
+}
+  
+@for $i from 0 through 20 {
+    .letter:nth-child(#{$i + 1}) {
+        transition-delay: $delay * $i;
+    }
+}
 
 *,
 *::after,
@@ -81,30 +121,23 @@ body {
 
 a {
 	text-decoration: none;
-	color: var(--color-link);
+	color: $base-light;
 	outline: none;
-	border-bottom: 1px dashed var(--color-2);
 }
 
 a:hover {
-	color: var(--color-link-hover);
 	outline: none;
-	border-bottom: 1px solid white;
 }
 
 a:focus {
 	outline: none;
-	background: lightgrey;
 }
 
 a:focus:not(:focus-visible) {
 	background: transparent;
 }
 
-a:focus-visible {
-	outline: 2px solid red;
-	background: transparent;
-}
+
 
 .frame {
 	padding: 3rem 5vw;
@@ -130,15 +163,6 @@ a:focus-visible {
 	margin-right: 1rem;
 }
 
-.frame__demos {
-	margin: 1rem 0;
-}
-
-.frame__demo--current,
-.frame__demo--current:hover {
-	color: var(--color-text);
-}
-
 .content {
 	width: 100%;
 	height: calc(100vh - 13rem);
@@ -161,8 +185,8 @@ a:focus-visible {
 		grid-template-columns: 66% 34%;
 		grid-template-rows: auto auto auto;
 		grid-template-areas: 'title links'
-							'... ...'
-							'... demos';
+							 '... ...'
+							 'scroll social';
 	}
 	.frame__title-wrap {
 		align-self: center;
@@ -172,20 +196,23 @@ a:focus-visible {
 	.frame__title {
 		margin: 0;
 	}
-	.frame__tagline {
-		position: relative;
-		margin: 0 0 0 1rem;
-		padding: 0 0 0 1rem;
-		opacity: 0.5;
-	}
-	.frame__demos {
-		margin: 0;
-		grid-area: demos;
-		justify-self: end;
-	}
 	.frame__links {
 		grid-area: links;
 		padding: 0;
+		justify-self: end;
+	}
+    .frame-scroll-wrap {
+        align-self: center;
+		grid-area: scroll;
+		display: flex;
+       
+    }
+    .frame__scroll {
+		display: flex;
+        background-color: #77a6b6;
+	}
+    .frame__social {
+		grid-area: social;
 		justify-self: end;
 	}
 	.frame a {
