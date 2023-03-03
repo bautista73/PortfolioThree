@@ -15,22 +15,29 @@ uniform float uDeepColor;
 varying float vDistortion;
 
 vec3 cosPalette(float t, vec3 a, vec3 b, vec3 c, vec3 d) {
-  return a + b * cos(5.28318 * (c * t + d));
+  return a + b * cos(6.28318 * (c * t + d));
   
 }     
  
 void main() {
-  float distort = vDistortion * 3.;
 
-  vec3 brightness = vec3(0.5, 0.5, 0.5);
+  float distort = vDistortion * 2.;
+
+  vec3 brightness = vec3(1.0, 0.0, 0.0);
+  vec3 oscilation = vec3(0.5, 0.5, 0.5); 
   vec3 contrast = vec3(0.5, 0.5, 0.5);
-  vec3 oscilation = vec3(1.0, 1.0, 1.0);
-  vec3 phase = vec3(0.01, 0.20, 0.30);
+  vec3 phase = vec3(0.90, 0.50, 0.90); 
+
+  //base code (purple)
+  // vec3 brightness = vec3(.1, .1, .9);
+  // vec3 contrast = vec3(.3, .3, .3);
+  // vec3 oscilation = vec3(.5, .5, .9);
+  // vec3 phase = vec3(.9, .1, .8);
  
   vec3 color = cosPalette(distort, brightness, contrast, oscilation, phase);
   
   gl_FragColor = vec4(color, vDistortion);
-  gl_FragColor += vec4(min(uDeepColor, 0.5), 0.5, 0.5, min(uOpacity, 1.));
+  gl_FragColor += vec4(min(uDeepColor, 1.0), .0, 0.1, min(uOpacity, 1.));
 }
 `
 
@@ -130,6 +137,7 @@ float pnoise(vec3 P, vec3 rep)
 }
 
 // https://github.com/dmnsgn/glsl-rotate
+
 mat3 rotation3dY(float angle) {
     float s = sin(angle);
     float c = cos(angle);

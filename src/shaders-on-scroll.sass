@@ -38,6 +38,7 @@ body
   @extend %font-regular
 
   width: 100%
+  max-width: 1000px
   height: 100vh
   overscroll-behavior: none
   color: $color-white
@@ -59,6 +60,7 @@ canvas.webgl
 
   @media (max-width: 64em)
       opacity: .7
+
 
 .scroll
   &__stage
@@ -114,9 +116,8 @@ canvas.webgl
         align-self: flex-start
 
   &__title
-    text-align: left
     opacity: .9
-    padding-right: 100px
+    background-color: red
 
     @media (max-width: 64em)
       width: 100%
@@ -130,13 +131,17 @@ canvas.webgl
 
     &-text
       font-size: min(8vw, 12rem)
-
+      width: min(max(55%, 5vw), 55%) 
+      background-color: blue
       &-one
         padding-left: 147px
+         font-size: min(8vw, 12rem)
       &-two
         padding-left: 50px
+         font-size: min(8vw, 12rem)
       &-three
         padding-left: 203px
+         font-size: min(8vw, 12rem)
     
 
   &__paragraph

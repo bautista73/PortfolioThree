@@ -33,6 +33,7 @@ h2 {
 
 body {
   width: 100%;
+  max-width: 1000px;
   height: 100vh;
   overscroll-behavior: none;
   color: white;
@@ -103,9 +104,8 @@ canvas.webgl {
   }
 }
 .section__title {
-  text-align: left;
   opacity: 0.9;
-  padding-right: 100px;
+  background-color: red;
 }
 @media (max-width: 64em) {
   .section__title {
@@ -121,15 +121,20 @@ canvas.webgl {
 }
 .section__title-text {
   font-size: min(8vw, 12rem);
+  width: min(max(55%, 5vw), 55%);
+  background-color: blue;
 }
 .section__title-text-one {
   padding-left: 147px;
+  padding-left-font-size: min(8vw, 12rem);
 }
 .section__title-text-two {
   padding-left: 50px;
+  padding-left-font-size: min(8vw, 12rem);
 }
 .section__title-text-three {
   padding-left: 203px;
+  padding-left-font-size: min(8vw, 12rem);
 }
 .section__paragraph {
   align-self: flex-end;
