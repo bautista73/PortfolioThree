@@ -20,6 +20,8 @@ elements.forEach(element => {
   element.appendChild(textContainer.cloneNode(true));
 });
 
+// home page text fader
+
 
 var selectedWorks = document.getElementById("selected-works");
 
@@ -44,3 +46,4 @@ window.addEventListener("scroll", function() {
     gsap.to(socialWrap, {opacity: 1, duration: 0.5});
   }
 });
+

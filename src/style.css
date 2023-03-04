@@ -396,41 +396,78 @@ a:focus:not(:focus-visible) {
 .works__section {
   width: 100%;
   min-height: calc(100vh - 5rem);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 10% 0;
 }
-.works__section-left {
+.works__section .scroll-border {
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+.works__section .scroll-border .scrolling-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.works__section .scroll-border .scrolling-wrap .comm {
+  display: flex;
+  font-size: 6rem;
+  animation: scroll 120s linear infinite;
+  cursor: pointer;
+  margin: 0;
+}
+.works__section .scroll-border .scrolling-wrap .comm div {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.2rem;
+}
+.works__section .scroll-border .scrolling-wrap .comm div:before {
+  content: "*";
+  color: #c0c0c0;
+  margin: auto 2rem;
+}
+.works__section .scroll-border .scrolling-wrap .comm div:nth-child(odd) {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.works__section .works__section__wrap-left {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 28%;
 }
-.works__section-left-number {
+.works__section .works__section__wrap-left-number {
   align-self: flex-start;
   font-size: min(1.5vw, 3rem);
   font-weight: 300;
   color: #c0c0c0;
 }
-.works__section-left-text {
+.works__section .works__section__wrap-left-text {
   letter-spacing: -4px;
   font-weight: 700;
   font-size: min(7vw, 10rem);
   line-height: 0.9;
 }
-.works__section-right {
+.works__section .works__section__wrap-right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   padding-top: 15rem;
   width: 40%;
 }
-.works__section-right-paragraph {
+.works__section .works__section__wrap-right-paragraph {
   font-weight: 500;
   font-size: 24px;
   max-width: 20ch;
 }
-.works__section-right-button {
+.works__section .works__section__wrap-right-button {
   text-transform: uppercase;
   font-size: 13px;
   margin: 20px;
