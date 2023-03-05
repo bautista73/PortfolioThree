@@ -33,7 +33,7 @@ h2 {
 
 body {
   width: 100%;
-  height: 100vh;
+  height: auto;
   overscroll-behavior: none;
   color: white;
   background-color: black;
