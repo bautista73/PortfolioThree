@@ -48,36 +48,16 @@ window.addEventListener("scroll", function() {
 });
 
 
-// scroll animation
 
-const degreeToRadian = (angle) => {
-  return angle * (Math.PI / 180);
-};
+//cards light
 
-const radius = 50;
-const diameter = radius * 2;
+document.getElementById("cards").onmousemove = e => {
+  for(const card of document.getElementsByClassName("card")) {
+    const rect = card.getBoundingClientRect(),
+          x = e.clientX - rect.left,
+          y = e.clientY - rect.top;
 
-const circle = document.querySelector("#circle");
-circle.style.width = `${diameter}px`;
-circle.style.height = `${diameter}px`;
-
-const text = circle.dataset.text;
-const characters = text.split("");
-
-const deltaAngle = 360 / characters.length;
-const characterOffsetAngle = 2;
-let currentAngle = -90;
-
-characters.forEach((character, index) => {
-  const span = document.createElement("span");
-  span.innerText = character;
-  const xPos = radius * (1 + Math.cos(degreeToRadian(currentAngle)));
-  const yPos = radius * (1 + Math.sin(degreeToRadian(currentAngle)));
-
-  const transform = `translate(${xPos}px, ${yPos}px)`;
-  const rotate = `rotate(${(index * deltaAngle) + characterOffsetAngle}deg)`;
-  span.style.transform = `${transform} ${rotate}`;
-
-  currentAngle += deltaAngle;
-  circle.appendChild(span);
-});
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+  };
+}

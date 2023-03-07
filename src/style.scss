@@ -112,16 +112,6 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
             height: fit-content;
         }
 
-        &__logo {
-
-            &-img {
-
-                img {
-                    width: 1.5rem;
-                }
-            }
-        }
-
         &__links {
             display: flex;
             gap: 12px;
@@ -138,25 +128,6 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
     left: 2.5vw;
     width: 100%;
     height: calc(3vh);
-
-    #circle {
-        position: relative;
-        border-radius: 100%;
-        padding: 0px;
-           animation: rotate-animation 30s infinite linear;
-      }
-      
-      #circle span {
-        position: absolute;
-        transform-origin: top left;
-        font-size: 9px;
-        color: rgba($color: #ffffff, $alpha: 0.4)
-      }
-      
-      @keyframes rotate-animation {
-        from { transform: rotate(0); }
-        to { transform: rotate(360deg); }
-      }
 }
 
 
@@ -175,16 +146,19 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
         &-text {
             display: flex;
             flex-direction: column;
-            font-weight: 600;
+            
             gap: 5px;
             &-one {
                 padding-left: 50px;
+                font-weight: 600;
             }
             &-two {
                 padding-left: 10px;
+                font-weight: 600;
             }
             &-three {
                 padding-left: 100px;
+                font-weight: 600;
             }
         }
     }
@@ -199,7 +173,7 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
         overflow: hidden;
         white-space: nowrap;
         display: flex;
-        background-color: rgba($color: #000000, $alpha: 0.5);
+        background-color: rgba($color: #000000, $alpha: 0.7);
 
         .comm {
             display: flex;
@@ -244,7 +218,6 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(150vh);
 
     .tab__number {
         width: 80%;
@@ -260,7 +233,7 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
 
     .background {
         height: auto;
-        width: 80%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -276,7 +249,7 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        font-size: min(4vw, 5rem);
+        font-size: min(9vw, 10rem);
         gap: 20px;
         opacity: .9;
         padding-bottom: 10%;
@@ -287,33 +260,6 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
             font-family: 'Playfair Display', serif;
             color: white;
         }
-
-        &-r1, &-r2, &-r3, &-r4, &-r5 {
-            font-weight: 600;
-            text-align: center;   
-            color: white;
-        }
-
-        &-r1 {
-           padding-right: 50px;
-           width: 90%;
-        }
-        &-r2 {
-            padding-left: 100px;
-            width: 90%;
-        }
-        &-r3 {
-            width: 90%;
-            padding-bottom: 10px;
-        }
-        &-r4 {
-            padding-right: 100px;
-            width: 90%;
-        }
-        &-r5 {
-            padding-left: 100px;
-            width: 90%;
-        }
     }
     
     &__sub {
@@ -322,12 +268,32 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 40px;
-        line-height: 40px;
+        gap: 20px;
+        line-height: 50px;
 
         &-p {
             font-size: min(1.7rem, 10rem);
             font-weight: 400;
+            max-width: 80ch;
+            color: white;
+        }
+    }
+
+    &__s {
+        padding: 10rem 5rem 5rem;
+        &-p {
+            font-size: min(1.7rem, 10rem);
+            font-weight: 400;
+            max-width: 80ch;
+            color: white;
+        }
+    }
+
+    &__c {
+
+        &-l {
+            font-size: min(3.7rem, 10rem);
+            font-weight: 600;
             max-width: 80ch;
             color: white;
         }
@@ -395,6 +361,30 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
                 text-transform: uppercase;
                 font-size: 13px;
                 margin: 20px;
+            }
+        }
+    }
+}
+
+#Footer {
+    position: relative;
+    height: calc(5vh);
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    .footer-wrapper {
+        height: 100%;
+        font-size: 15px;
+       
+        .footer-span-wrapper {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+
+            .span-links {
+                display: flex;
+                list-style: none;
+                gap: 12px;
             }
         }
     }
