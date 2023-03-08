@@ -52,7 +52,6 @@ $duration: 0.6s;
 $easing: cubic-bezier(0.76, 0, 0.24, 1);
 
 .rolling-text{
-
     display: inline-block;
     $font-size: 15px;
     font-size: $font-size;
@@ -91,11 +90,11 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
     top: 0;
     height: calc(5vh);
     width: 100%;
-    z-index: 999;
+    z-index: 1001;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-size: 13px;
+    font-size: 15px;
 
 
     &__wrapper {
@@ -107,7 +106,8 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
         justify-content: space-between;
         align-items: center;
         background-color: rgba($color: #000000, $alpha: 0.95);
-        padding: 10px 20px;
+        padding: 3.5rem 4rem;
+
         &__title {
             height: fit-content;
         }
@@ -122,23 +122,15 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
     }
 }
 
-.frame__two {
-    position: fixed;
-    bottom: 9vh;
-    left: 2.5vw;
-    width: 100%;
-    height: calc(3vh);
-}
-
 
 .hero__section {
     width: 100%;
-    height: auto;
+    margin: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    min-height: calc(100vh - 1rem);
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 100vh;
     &__title {
         font-size: min(8vw, 6rem);
         opacity: .9;
@@ -150,16 +142,31 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
             gap: 5px;
             &-one {
                 padding-left: 50px;
-                font-weight: 600;
+                font-weight: 700;
             }
             &-two {
                 padding-left: 10px;
-                font-weight: 600;
+                font-weight: 700;
             }
             &-three {
                 padding-left: 100px;
-                font-weight: 600;
+                font-weight: 700;
             }
+        }
+    }
+    &__banner {
+        margin: auto;
+        height: 85%;
+        width: min(90vw, 120rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 15px;
+
+        &__display {
+            font-size: min(5vw, 8rem);
+            font-weight: 400;
+            letter-spacing: -1.5px;
         }
     }
 }
@@ -219,18 +226,6 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
     align-items: center;
     justify-content: center;
 
-    .tab__number {
-        width: 80%;
-        position: absolute;
-        top: 3%;
-        font-size: min(1rem, 2rem);
-    }
-
-    hr {
-        width: 60%;
-        opacity: .3;
-    }
-
     .background {
         height: auto;
         width: 100%;
@@ -238,7 +233,7 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 200px 50px;
+        padding: 50px;
         background-color: rgba($color: #000000, $alpha: 0.9);
         backdrop-filter: blur(250px);
     }
@@ -249,9 +244,9 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        font-size: min(9vw, 10rem);
-        gap: 20px;
+        font-size: min(7vw, 10rem);
         opacity: .9;
+        padding-top: 10%;
         padding-bottom: 10%;
 
         &-font {
@@ -276,11 +271,17 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
             font-weight: 400;
             max-width: 80ch;
             color: white;
+           
         }
+    }
+
+    .underline {
+        text-decoration: underline;
     }
 
     &__s {
         padding: 10rem 5rem 5rem;
+
         &-p {
             font-size: min(1.7rem, 10rem);
             font-weight: 400;
@@ -296,6 +297,8 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
             font-weight: 600;
             max-width: 80ch;
             color: white;
+            padding-bottom: 10%;
+            text-decoration: none;
         }
     }
 }
@@ -309,19 +312,21 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10rem;
+    gap: 5rem;
 
     z-index: 999;
 
     .works__section__wrap {
         width: 80%;
         height: 100%;
-        padding: 10vh 0;
-
-        // background-color: rgba($color: #000000, $alpha: 0.4);
+        padding: 10vh 3vw;
         border-radius: 24px;
-
         display: flex;
+        transition: box-shadow .2s ease-in-out;
+
+        &:hover {
+            
+        }
 
         &-left {
             display: flex;
@@ -358,6 +363,8 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
             }
 
             &-button {
+                color: $base-light;
+                text-decoration: none;
                 text-transform: uppercase;
                 font-size: 13px;
                 margin: 20px;
@@ -367,6 +374,7 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 #Footer {
+    margin-top: 5rem;
     position: relative;
     height: calc(5vh);
     border-top: 2px solid rgba(255, 255, 255, 0.5);

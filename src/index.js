@@ -47,17 +47,17 @@ window.addEventListener("scroll", function() {
   }
 });
 
-
-
-//cards light
-
-document.getElementById("cards").onmousemove = e => {
-  for(const card of document.getElementsByClassName("card")) {
-    const rect = card.getBoundingClientRect(),
-          x = e.clientX - rect.left,
-          y = e.clientY - rect.top;
-
-    card.style.setProperty("--mouse-x", `${x}px`);
-    card.style.setProperty("--mouse-y", `${y}px`);
-  };
-}
+const scrollLinks = document.querySelectorAll('.scroll-link');
+  
+scrollLinks.forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+    const targetId = link.getAttribute('href');
+    const target = document.querySelector(targetId);
+    const targetTop = target.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({
+      top: targetTop,
+      behavior: 'smooth'
+    });
+  });
+});
