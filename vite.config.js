@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite';
 import sass from 'sass';
 
+const isCodeSandbox = 'SANDBOX_URL' in process.env || 'CODESANDBOX_HOST' in process.env
+
 export default defineConfig({
   root: 'src/',
   publicDir: '../static/',

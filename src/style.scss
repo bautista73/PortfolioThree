@@ -47,6 +47,22 @@ body {
 }
 
 
+.cursor {
+    pointer-events: none;
+    
+    &__ball {
+      position: fixed;
+      top: 0;
+      left: 0;
+      mix-blend-mode: difference;
+      z-index: 9999;
+      
+      circle {
+        fill: #f7f8fa;
+      }
+    }      
+} 
+  
 //universal styles
 
 $delay: 0.015s;
@@ -99,11 +115,6 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
     }
 }
 
-.background-blur {
-    background-color: rgba($color: #000000, $alpha: 0.9);
-    backdrop-filter: blur(250px);
-}
-
 .section__divider {
     width: 95%;
     height: 5rem;
@@ -118,7 +129,7 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
 //////
 
 .frame {
-    position: fixed;
+    position: absolute;
     top: 0;
     height: calc(5vh);
     width: 100%;
@@ -137,7 +148,6 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: rgba($color: #000000, $alpha: 0.95);
         padding: 3.5rem 4rem;
 
         &__title {
@@ -234,6 +244,7 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: rgba($color: #000000, $alpha: 0.9);
 
     .background {
         height: auto;
@@ -243,8 +254,7 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
         align-items: center;
         justify-content: center;
         padding: 50px;
-        background-color: rgba($color: #000000, $alpha: 0.9);
-        backdrop-filter: blur(250px);
+        
     }
     
     &__text {
@@ -300,26 +310,33 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
             &__wrapper {
                 width: 80%;
                 
+                
                 &-col {
                     width: 100%;
                     display: flex;
                     justify-content: space-between;
-                    gap: 20px;
-                   
+                    padding: 20px;
+                    &:nth-of-type(1) {
+                        padding-top: 0;
+                    }
                     &-header {
                         width: 30%;
                         font-weight: 600;
                     }
 
                     &-wrapper {
-                        width: 30%;
+                        width: 13rem;
                         display: flex;
                         flex-direction: column;
                         align-items: flex-start;
-                        padding-bottom: 50px;
                         line-height: 4rem;
                         color: rgb(221, 221, 221);
+                    
                     }
+                }
+
+                &-hr {
+                    color: red;
                 }
             }
         }
@@ -368,14 +385,14 @@ $easing: cubic-bezier(0.76, 0, 0.24, 1);
         flex-direction: column;
         gap: 50px;
         width: 95%;
-        padding: clamp(1rem, 5vw, 6rem);
+        padding: clamp(2rem, 10vw, 8rem);
       }
       
       nav > a {
-        color: rgba(255, 255, 255, 0.5);
-        font-size: min(7vw, 10rem);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: min(5vw, 8rem);
         font-weight: 400;
-        letter-spacing: -5px;
+        letter-spacing: -1.5px;
         text-decoration: none;
         position: relative;
       }
