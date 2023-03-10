@@ -381,14 +381,36 @@ body {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease;
+
+            display: flex;
+            flex-direction: column;
+
+            &-wrap {
+
+                &-left {
+                    display: flex;
+                    flex-direction: column;
+    
+                    &-title {
+                        font-size: 15px;
+                    }
+    
+                    &-text {
+                        font-size: 13px;
+                    }
+                }
+            }
+
+            &-img {
+                width: 90%;
+                height: 90%;
+            }
         }
-          
-          
+           
         .project.active .project-details {
-            max-height: 1000px;
+            max-height: auto;
             transition: max-height 0.5s ease-in;
-        }
-          
+        }        
       }
       
       nav > a:hover {
@@ -422,7 +444,6 @@ body {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
       }
-
 }
 
 .contact__section {
