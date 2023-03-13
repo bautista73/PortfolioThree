@@ -17,18 +17,33 @@ export default class {
 
     document.body.style.height = `${this.scroll.height}px`
   }
-  
   update() {
     this.scroll.hard = window.scrollY
     this.scroll.hard = GSAP.utils.clamp(0, this.scroll.limit, this.scroll.hard)
-    this.scroll.soft = GSAP.utils.interpolate(this.scroll.soft, this.scroll.hard, this.scroll.ease)
-
-    if (this.scroll.soft < 0.01) {
-      this.scroll.soft = 0
+  
+    if (window.innerWidth >= 768) {
+      // Use GSAP interpolation for screen width greater than or equal to 768 pixels
+      this.scroll.soft = GSAP.utils.interpolate(this.scroll.soft, this.scroll.hard, this.scroll.ease)
+      this.elements.scrollContent.style.transform = `translateY(${-this.scroll.soft}px)`
+    } else {
+      // Set the scroll position directly for screen width less than 768 pixels
+      this.scroll.soft = this.scroll.hard
+      this.elements.scrollContent.style.transform = `translateY(${-this.scroll.soft}px)`
     }
+  }
+  
+  
+  // update() {
+  //   this.scroll.hard = window.scrollY
+  //   this.scroll.hard = GSAP.utils.clamp(0, this.scroll.limit, this.scroll.hard)
+  //   this.scroll.soft = GSAP.utils.interpolate(this.scroll.soft, this.scroll.hard, this.scroll.ease)
+
+  //   if (this.scroll.soft < 0.01) {
+  //     this.scroll.soft = 0
+  //   }
     
-    this.elements.scrollContent.style.transform = `translateY(${-this.scroll.soft}px)`
-  }    
+  //   this.elements.scrollContent.style.transform = `translateY(${-this.scroll.soft}px)`
+  // }    
 
   onResize() {
     this.viewport = {
