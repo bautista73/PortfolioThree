@@ -45,7 +45,7 @@
 
                     <section class="hero__section">
                         <div class="hero__section__banner">
-                            <h2 class="hero__section__banner__display">A software developer, crafting
+                            <h2 class="hero__section__banner__display">A front-end developer, crafting
                             </h2>
                             <h2 class="hero__section__banner__display">distinctive and interactive digital</h2>
                             <h2 class="hero__section__banner__display">experiences</h2>
@@ -68,108 +68,161 @@
                         <div class="works-container">
                             <div class="titles-list">
                               <ul>
-                                <li><span>Elmer's Express</span><p>Web Development</p></li>
-                                <li><span>NexusMD</span><p>Application</p></li>
-                                <li><span>Liftify</span><p>Mobile Application</p></li>
-                                <li><span>Desk & Club</span><p>Web Development</p></li>
-                                <li><span>DisplayMe</span><p>API</p></li>
+                                <li class="popup-trigger" data-popup-content="#popup-content-1" data-image="https://i.imgur.com/SHntByw.png"><span>Elmer's Express</span><p>Web Development</p></li>
+
+                                <li class="popup-trigger" data-popup-content="#popup-content-2" data-image="https://i.imgur.com/2zlPnfU.png"><span>NexusMD</span><p>Application</p></li>
+
+                                <li class="popup-trigger" data-popup-content="#popup-content-3" data-image="https://i.imgur.com/0Z5aXRv.png"><span>Liftify</span><p>Mobile Application</p></li>
+
+                                <li class="popup-trigger" data-popup-content="#popup-content-4" data-image="https://i.imgur.com/uzd63iX.png"><span>Desk & Club</span><p>Web Development</p></li>
+
+                                <li class="popup-trigger" data-popup-content="#popup-content-5" data-image="https://i.imgur.com/dkcTkwI.png"><span>DisplayMe</span><p>API</p></li>
                               </ul>
                             </div>
                             <div class="project-images">
                               <div class="project-image" id="project-1"></div>
                               <div class="project-image" id="project-2"></div>
                               <div class="project-image" id="project-3"></div>
+                              <div class="project-image" id="project-4"></div>
+                              <div class="project-image" id="project-5"></div>
                             </div>
-                          </div>
-                          
+                        </div>
 
-                        <!-- <nav id="nav">
-
-                            <a href="#">
-                                <span>Elmer's Express</span>
-                                <img src="https://i.imgur.com/SHntByw.png" />
-                                <div class="project-details">
-                                  <div class="project-details-wrap">
-                                    <div class="project-details-wrap-col column-1">
-                                        <span class="project-details-col-title">
-                                            Description
-                                        </span>
-                                        <p class="project-details-col-text">
-                                            Elmers Express, a moving and storage company, has recently undergone a website revamp that aims to improve its online presence and make it easier for customers to navigate the site. The redesign focuses on creating a modern and professional look that reflects Elmers Express's commitment to providing high-quality moving and storage services.
-                                        </p>
-                                      </div>
-                                      <div class="project-details-wrap-col column-2">
-                                        <span class="project-details-col-title">
-                                            Technologies
-                                        </span>
-                                        <p class="project-details-col-text">
-                                            HTML5 & Pug, CSS & SCSS, JavaScript, Node.js, Firebase, Vite, Netlify
-                                        </p>
-                                      </div>
-                                      <div class="project-details-wrap-col-button-wrap column-3">
-                                        <button class="project-details-wrap-col-button">GitHub</button>
-                                        <button class="project-details-wrap-col-button">Live Site</button>
-                                      </div>
-                                  </div>
-                                  <img src="https://i.imgur.com/SHntByw.png" class="project-details-img" />
+                        <div id="popup-window">
+                            <div class="pop-button-wrap"><button id="close-button">Close</button></div>
+                            <div id="popup-content"></div>
+                        </div>
+<!--ElmersExpress--> 
+                        <div id="popup-content-1" class="popup-content">
+                            <div class="pop-wrapper">
+                                <div class="pop-heading">
+                                    <span class="pop-title">Elmer's Express</span>
+                                    <div class="pop-link-wrap">
+                                        <a href="#" class="pop-links">GitHub</a>
+                                        <a href="#" class="pop-links">Demo</a>
+                                    </div>
                                 </div>
-                            </a>
-
-                            <a href="#">
-                              <span>NexusMD</span>
-                              <img src="https://i.imgur.com/2zlPnfU.png" />
-                              <div class="project-details">
-                                <h2>Elmer's Express</h2>
-                                <p>A website for a fictional pizza restaurant.</p>
-                                <ul>
-                                  <li>HTML/CSS</li>
-                                  <li>JavaScript</li>
-                                  <li>Responsive design</li>
-                                </ul>
-                              </div>
-                            </a>
-
-                            <a href="#">
-                              <span>Liftify</span>
-                              <img src="https://i.imgur.com/0Z5aXRv.png" />
-                              <div class="project-details">
-                                <h2>Elmer's Express</h2>
-                                <p>A website for a fictional pizza restaurant.</p>
-                                <ul>
-                                  <li>HTML/CSS</li>
-                                  <li>JavaScript</li>
-                                  <li>Responsive design</li>
-                                </ul>
-                              </div>
-                            </a>
-                            <a href="#">
-                              <span>Desk & Club</span>
-                              <img src="https://i.imgur.com/uzd63iX.png" />
-                              <div class="project-details">
-                                <h2>Elmer's Express</h2>
-                                <p>A website for a fictional pizza restaurant.</p>
-                                <ul>
-                                  <li>HTML/CSS</li>
-                                  <li>JavaScript</li>
-                                  <li>Responsive design</li>
-                                </ul>
-                              </div>
-                            </a>
-                            <a href="#">
-                              <span>DisplayMe</span>
-                              <img src="https://i.imgur.com/dkcTkwI.png" />
-                              <div class="project-details">
-                                <h2>Elmer's Express</h2>
-                                <p>A website for a fictional pizza restaurant.</p>
-                                <ul>
-                                  <li>HTML/CSS</li>
-                                  <li>JavaScript</li>
-                                  <li>Responsive design</li>
-                                </ul>
-                              </div>
-                            </a>
-                          </nav> -->
-                        
+                                <div class="pop-body">
+                                    <div class="pop-body-col">
+                                        <span class="pop-body-title">Description</span>
+                                        <p class="pop-body-text">Elmers Express, a moving and storage company, has recently undergone a website revamp that aims to improve its online presence and make it easier for customers to navigate the site. The redesign focuses on creating a modern and professional look that reflects Elmers Express's commitment to providing high-quality moving and storage services.</p>
+                                    </div>
+                                    <div class="pop-body-col">
+                                        <span class="pop-body-title">Technologies</span>
+                                        <p class="pop-body-text">HTML, CSS/SCSS, JavaScript, Node.js <br>Currently Integrating: React, MongoDB, Vite, & GSAP.js</p>
+                                    </div>
+                                </div>
+                                <div class="pop-img">
+                                    <img src="https://i.imgur.com/SHntByw.png" />
+                                </div>
+                            </div>
+                        </div>
+<!--NexusMD-->
+                        <div id="popup-content-2" class="popup-content">
+                            <div class="pop-wrapper">
+                                <div class="pop-heading">
+                                    <span class="pop-title">NexusMD</span>
+                                    <div class="pop-link-wrap">
+                                        <a href="#" class="pop-links">GitHub</a>
+                                        <a href="#" class="pop-links">Demo</a>
+                                    </div>
+                                </div>
+                                <div class="pop-body">
+                                    <div class="pop-body-col">
+                                        <span class="pop-body-title">Description</span>
+                                        <p class="pop-body-text">NexusMD is a patient management portal designed for private practices. This Web application provides a comprehensive dashboard for managing patient information, appointments, and history. The goal was to design and develop an ideal solution for medical practices looking to improve patient management and streamline administrative tasks.</p>
+                                    </div>
+                                    <div class="pop-body-col">
+                                        <span class="pop-body-title">Technologies</span>
+                                        <p class="pop-body-text">C#, ASP.NET, Razor, Bootstrap, Postman, SQL, & Azure</p>
+                                    </div>
+                                </div>
+                                <div class="pop-img">
+                                    <img src="https://i.imgur.com/2zlPnfU.png" />
+                                </div>
+                            </div>
+                        </div>
+<!--Liftify-->
+                        <div id="popup-content-3" class="popup-content">
+                            <div class="pop-wrapper">
+                                <div class="pop-heading">
+                                    <span class="pop-title">Liftify</span>
+                                    <div class="pop-link-wrap">
+                                        <span class="pop-links">Coming Soon</span>
+                                        <!-- <a href="#" class="pop-links">GitHub</a>
+                                        <a href="#" class="pop-links">Demo</a> -->
+                                    </div>
+                                </div>
+                                <div class="pop-body">
+                                    <div class="pop-body-col">
+                                        <span class="pop-body-title">Description</span>
+                                        <p class="pop-body-text">Liftify is a no-frills mobile weightlifting application that simplifies workout tracking. It is designed to be a simple yet effective tool for weightlifters who want to focus on their training without being bogged down by complicated features. Its core essentials include weight tracking, repetition tracking, and goal setting, enabling users to stay motivated and achieve their fitness goals.</p>
+                                    </div>
+                                    <div class="pop-body-col">
+                                        <span class="pop-body-title">Technologies</span>
+                                        <p class="pop-body-text">React Native, JavaScript, Redux, React Navigation, & Firebase</p>
+                                        <br>
+                                        <p class="pop-body-text"><em>This project is currenly a work in progress</em></p>
+                                    </div>
+                                </div>
+                                <div class="pop-img">
+                                    <img src="https://i.imgur.com/0Z5aXRv.png" />
+                                </div>
+                            </div>
+                        </div>
+<!--Desk & Club-->
+                        <div id="popup-content-4" class="popup-content">
+                            <div class="pop-wrapper">
+                                <div class="pop-heading">
+                                    <span class="pop-title">Desk & Club</span>
+                                    <div class="pop-link-wrap">
+                                        <a href="#" class="pop-links">GitHub</a>
+                                        <a href="#" class="pop-links">Demo</a>
+                                    </div>
+                                </div>
+                                <div class="pop-body">
+                                    <div class="pop-body-col">
+                                        <span class="pop-body-title">Description</span>
+                                        <p class="pop-body-text">Desk & Club is a blog-style website for computer setup enthusiasts. Featuring clean workspaces and gaming stations, it is a dedicated hub for those who appreciate the art of a well-crafted setup. This website is consistently updated for new styles, moods, and inspiration.</p>
+                                    </div>
+                                    <div class="pop-body-col">
+                                        <span class="pop-body-title">Technologies</span>
+                                        <p class="pop-body-text">HTML, CSS/SCSS, JavaScript, Node.js, React, GSAP.js, Vite & Netlify</p>
+                                    </div>
+                                </div>
+                                <div class="pop-img">
+                                    <img src="https://i.imgur.com/uzd63iX.png" />
+                                </div>
+                            </div>
+                        </div>
+<!--DisplayMe-->
+                        <div id="popup-content-5" class="popup-content">
+                            <div class="pop-wrapper">
+                                <div class="pop-heading">
+                                    <span class="pop-title">DisplayMe</span>
+                                    <div class="pop-link-wrap">
+                                        <span class="pop-links">Coming Soon</span>
+                                        <!-- <a href="#" class="pop-links">GitHub</a>
+                                        <a href="#" class="pop-links">Demo</a> -->
+                                    </div>
+                                </div>
+                                <div class="pop-body">
+                                    <div class="pop-body-col">
+                                        <span class="pop-body-title">Description</span>
+                                        <p class="pop-body-text">DisplayMe is an API project designed to help users create their ideal workspace by providing a virtual platform to compare popular monitors side by side. With an easy-to-use interface in the works and vast selection of monitors that are pulled via the API, DisplayMe allows users to gain valuable insights into monitor performance and make informed decisions when it comes to choosing the right equipment for their workstation.</p>
+                                    </div>
+                                    <div class="pop-body-col">
+                                        <span class="pop-body-title">Technologies</span>
+                                        <p class="pop-body-text">JavaScript, Node.js, Express.js, Passport.js, MongoDB, React, & Axios</p>
+                                        <br>
+                                        <p class="pop-body-text"><em>This project is currenly a work in progress in collaboration with developer ProjektAlex</em></p>
+                                    </div>
+                                </div>
+                                <div class="pop-img">
+                                    <img src="https://i.imgur.com/dkcTkwI.png" />
+                                </div>
+                            </div>
+                        </div>
                     </section>
 
                     <hr class="hr-divider" />
@@ -187,7 +240,7 @@
         
                         <div class="background">
                             <div class="about__section__sub">
-                                <p class="about__section__sub-p">My name is Brandon Bautista, I am a software developer who is dedicated to creating exceptional user experiences. With a background that spans product development, user experience, and interaction design, I bring a wealth of experience and expertise to every project I undertake.</p>
+                                <p class="about__section__sub-p">My name is Brandon Bautista, I am a front-end developer who is dedicated to creating exceptional user experiences. With a background that spans product development, user experience, and interaction design, I bring a wealth of experience and expertise to every project I undertake.</p>
 
                                 <p class="about__section__sub-p">At the core of my approach is an unwavering commitment to quality and purpose, which has been honed through years of experience and a passion for staying ahead of the curve. I believe that great product development means putting the user first, and I strive to create them as intuitive, engaging, and impactful as I can.</p>
 
