@@ -138,13 +138,13 @@ body {
         }
        
 
-        &__title {
+        // &__title {
             
-        }
+        // }
 
         &__links {
             display: flex;
-            
+
             @media screen and (max-width: 768px) {
                 display: none;
             }
