@@ -115,7 +115,6 @@ body {
 .frame {
     position: absolute;
     top: 0;
-    height: calc(5vh);
     width: 100%;
     z-index: 1001;
     display: flex;
@@ -131,7 +130,7 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-top: 1rem;
+        background-color: #77a6b6;
 
         @media screen and (max-width: 768px) {
             justify-content: flex-start;
@@ -140,15 +139,12 @@ body {
        
 
         &__title {
-            height: fit-content;
+            
         }
 
         &__links {
             display: flex;
-            gap: 12px;
-            width: auto;
-            height: auto;
-
+            
             @media screen and (max-width: 768px) {
                 display: none;
             }

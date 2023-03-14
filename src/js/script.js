@@ -1,4 +1,4 @@
-import './style.scss';
+import '../assets/style.scss';
 
 import * as THREE from 'three'
 import GSAP from 'gsap'
@@ -200,8 +200,8 @@ class ScrollStage {
     this.settings = {
       // vertex
       uFrequency: {
-        start: 0,
-        end: 4
+        start: 4,
+        end: 0
       },
       uAmplitude: {
         start: 4,
@@ -212,17 +212,17 @@ class ScrollStage {
         end: 1
       },
       uStrength: {
-        start: 0,
-        end: 1.1
+        start: 1.3,
+        end: 0
       },
       // fragment
       uDeepColor: {  // max 1
-        start: .1,
-        end: 0
+        start: .05,
+        end: .01
       },
       uOpacity: {  // max 1
-        start: .1,
-        end: .66
+        start: .65,
+        end: .1
       }
     }
 
@@ -343,11 +343,7 @@ class ScrollStage {
    */
   addEventListeners() {
     window.addEventListener('load', this.onLoad.bind(this))
-    
-    // window.addEventListener('mousemove', this.onMouseMove.bind(this))  // enable for soundcheck (→ console)
-    
     window.addEventListener('scroll', this.onScroll.bind(this))
-
     window.addEventListener('resize', this.onResize.bind(this))
   }
 
@@ -358,9 +354,6 @@ class ScrollStage {
   }
 
   onMouseMove(event) {
-    // play with it!
-    // enable / disable / change x, y, multiplier …
-
     this.mouse.x = (event.clientX / this.viewport.width).toFixed(2) * 4
     this.mouse.y = (event.clientY / this.viewport.height).toFixed(2) * 2
 
@@ -368,8 +361,6 @@ class ScrollStage {
     GSAP.to(this.mesh.material.uniforms.uAmplitude, { value: this.mouse.x })
     GSAP.to(this.mesh.material.uniforms.uDensity, { value: this.mouse.y })
     GSAP.to(this.mesh.material.uniforms.uStrength, { value: this.mouse.y })
-    // GSAP.to(this.mesh.material.uniforms.uDeepColor, { value: this.mouse.x })
-    // GSAP.to(this.mesh.material.uniforms.uOpacity, { value: this.mouse.y })
 
     console.info(`X: ${this.mouse.x}  |  Y: ${this.mouse.y}`)
   }
