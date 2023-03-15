@@ -15,7 +15,7 @@ for (let i = 0; i < hoverables.length; i++) {
 // Move the cursor
 function onMouseMove(e) {
   gsap.to(bigBall, {
-    duration: 0.4,
+    duration: 0.3,
     x: e.pageX - 15,
     y: e.pageY - window.pageYOffset - 15,
     ease: 'power2.out'
@@ -23,7 +23,7 @@ function onMouseMove(e) {
   gsap.to(smallBall, {
     duration: 0.1,
     x: e.pageX - 5,
-    y: e.pageY - window.pageYOffset - 7,
+    y: e.pageY - window.pageYOffset - 10,
     ease: 'power2.out'
   });
 }
@@ -32,7 +32,7 @@ function onMouseMove(e) {
 function onMouseHover() {
   gsap.to(bigBall, {
     duration: 0.3,
-    scale: 4,
+    scale: 3,
     ease: 'power2.out'
   });
 }

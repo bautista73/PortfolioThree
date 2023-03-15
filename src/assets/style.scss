@@ -26,10 +26,6 @@ $font-size-s: 16px;
 	box-sizing: border-box;
 }
 
-:root {
-	font-size: 13px;
-}
-
 body {
 	margin: 0;
 	--color-text: $base-light;
@@ -39,11 +35,10 @@ body {
 	--color-link: white;
 	--color-link-hover: white;
 	color: $base-light;
-	background-color: var(--color-bg);
+	// background-color: var(--color-bg);
 	font-family: 'Inter', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-
 }
 
 
@@ -261,7 +256,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba($color: #000000, $alpha: 0.7);
 
     .background {
         height: auto;

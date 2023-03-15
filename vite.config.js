@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite';
-import html from 'vite-plugin-html';
 import sass from 'sass';
 
 const isCodeSandbox = 'SANDBOX_URL' in process.env || 'CODESANDBOX_HOST' in process.env
@@ -29,7 +28,6 @@ export default defineConfig({
         }
       },
     },
-    ...html(),
   ],
 });
 

@@ -5,9 +5,210 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brandon Bautista | Works</title>
     <style lang="scss"></style>
-    <link rel="stylesheet" type="text/css" href="./assets/style.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/shaders-on-scroll.sass">
+    <link rel="stylesheet" type="text/css" href="../assets/main.scss" />
+    <script type="module" src="./js/script.js"></script>
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <ul>
+                <li><a class="hoverable" href="/">Brandon Bautista</a></li>
+            </ul>
+            <ul>
+                <li><a class="hoverable" href="./works.html">Selected Works</a></li>
+                <li>/</li>
+                <li><a class="hoverable" href="./about.html">About Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <canvas id="webgl"></canvas> 
+    <!-- <div class="cursor">
+        <div class="cursor__ball cursor__ball--big ">
+            <svg height="30" width="30">
+                <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+            </svg>
+        </div>
+        <div class="cursor__ball cursor__ball--small">
+            <svg height="10" width="10">
+                <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+            </svg>
+        </div>
+    </div> -->
+    <main>
+        <div id="content">
+            <section id="works" name="works" class="works__section">
+
+                <div class="section__divider">
+                    <div class="section__divider__title">
+                        <span>Works</span>
+                    </div>
+                    <div class="section__divider__number">
+                        <span>01</span>
+                    </div>
+                </div>
+
+                <div class="works-container">
+                    <div class="titles-list">
+                    <ul>
+                        <li class="popup-trigger" data-popup-content="#popup-content-1" data-image="https://i.imgur.com/SHntByw.png"><span>Elmer's Express</span><p>Web Development</p></li>
+
+                        <li class="popup-trigger" data-popup-content="#popup-content-2" data-image="https://i.imgur.com/2zlPnfU.png"><span>NexusMD</span><p>Application</p></li>
+
+                        <li class="popup-trigger" data-popup-content="#popup-content-3" data-image="https://i.imgur.com/0Z5aXRv.png"><span>Liftify</span><p>Mobile Application</p></li>
+
+                        <li class="popup-trigger" data-popup-content="#popup-content-4" data-image="https://i.imgur.com/uzd63iX.png"><span>Desk & Club</span><p>Web Development</p></li>
+
+                        <li class="popup-trigger" data-popup-content="#popup-content-5" data-image="https://i.imgur.com/dkcTkwI.png"><span>DisplayMe</span><p>API</p></li>
+                    </ul>
+                    </div>
+                    <div class="project-images">
+                    <div class="project-image" id="project-1"></div>
+                    <div class="project-image" id="project-2"></div>
+                    <div class="project-image" id="project-3"></div>
+                    <div class="project-image" id="project-4"></div>
+                    <div class="project-image" id="project-5"></div>
+                    </div>
+                </div>
+
+                <div id="popup-window">
+                    <div class="pop-button-wrap"><button id="close-button">Close</button></div>
+                    <div id="popup-content"></div>
+                </div>
+        <!--ElmersExpress--> 
+                <div id="popup-content-1" class="popup-content">
+                    <div class="pop-wrapper">
+                        <div class="pop-heading">
+                            <span class="pop-title">Elmer's Express</span>
+                            <div class="pop-link-wrap">
+                                <a href="#" class="pop-links">GitHub</a>
+                                <a href="#" class="pop-links">Demo</a>
+                            </div>
+                        </div>
+                        <div class="pop-body">
+                            <div class="pop-body-col">
+                                <span class="pop-body-title">Description</span>
+                                <p class="pop-body-text">Elmers Express, a moving and storage company, has recently undergone a website revamp that aims to improve its online presence and make it easier for customers to navigate the site. The redesign focuses on creating a modern and professional look that reflects Elmers Express's commitment to providing high-quality moving and storage services.</p>
+                            </div>
+                            <div class="pop-body-col">
+                                <span class="pop-body-title">Technologies</span>
+                                <p class="pop-body-text">HTML, CSS/SCSS, JavaScript, Node.js <br>Currently Integrating: React, MongoDB, Vite, & GSAP.js</p>
+                            </div>
+                        </div>
+                        <div class="pop-img">
+                            <img src="https://i.imgur.com/SHntByw.png" />
+                        </div>
+                    </div>
+                </div>
+        <!--NexusMD-->
+                <div id="popup-content-2" class="popup-content">
+                    <div class="pop-wrapper">
+                        <div class="pop-heading">
+                            <span class="pop-title">NexusMD</span>
+                            <div class="pop-link-wrap">
+                                <a href="#" class="pop-links">GitHub</a>
+                                <a href="#" class="pop-links">Demo</a>
+                            </div>
+                        </div>
+                        <div class="pop-body">
+                            <div class="pop-body-col">
+                                <span class="pop-body-title">Description</span>
+                                <p class="pop-body-text">NexusMD is a patient management portal designed for private practices. This Web application provides a comprehensive dashboard for managing patient information, appointments, and history. The goal was to design and develop an ideal solution for medical practices looking to improve patient management and streamline administrative tasks.</p>
+                            </div>
+                            <div class="pop-body-col">
+                                <span class="pop-body-title">Technologies</span>
+                                <p class="pop-body-text">C#, ASP.NET, Razor, Bootstrap, Postman, SQL, & Azure</p>
+                            </div>
+                        </div>
+                        <div class="pop-img">
+                            <img src="https://i.imgur.com/2zlPnfU.png" />
+                        </div>
+                    </div>
+                </div>
+        <!--Liftify-->
+                <div id="popup-content-3" class="popup-content">
+                    <div class="pop-wrapper">
+                        <div class="pop-heading">
+                            <span class="pop-title">Liftify</span>
+                            <div class="pop-link-wrap">
+                                <span class="pop-links">Coming Soon</span>
+                                <!-- <a href="#" class="pop-links">GitHub</a>
+                                <a href="#" class="pop-links">Demo</a> -->
+                            </div>
+                        </div>
+                        <div class="pop-body">
+                            <div class="pop-body-col">
+                                <span class="pop-body-title">Description</span>
+                                <p class="pop-body-text">Liftify is a no-frills mobile weightlifting application that simplifies workout tracking. It is designed to be a simple yet effective tool for weightlifters who want to focus on their training without being bogged down by complicated features. Its core essentials include weight tracking, repetition tracking, and goal setting, enabling users to stay motivated and achieve their fitness goals.</p>
+                            </div>
+                            <div class="pop-body-col">
+                                <span class="pop-body-title">Technologies</span>
+                                <p class="pop-body-text">React Native, JavaScript, Redux, React Navigation, & Firebase</p>
+                                <br>
+                                <p class="pop-body-text"><em>This project is currenly a work in progress</em></p>
+                            </div>
+                        </div>
+                        <div class="pop-img">
+                            <img src="https://i.imgur.com/0Z5aXRv.png" />
+                        </div>
+                    </div>
+                </div>
+        <!--Desk & Club-->
+                <div id="popup-content-4" class="popup-content">
+                    <div class="pop-wrapper">
+                        <div class="pop-heading">
+                            <span class="pop-title">Desk & Club</span>
+                            <div class="pop-link-wrap">
+                                <a href="#" class="pop-links">GitHub</a>
+                                <a href="#" class="pop-links">Demo</a>
+                            </div>
+                        </div>
+                        <div class="pop-body">
+                            <div class="pop-body-col">
+                                <span class="pop-body-title">Description</span>
+                                <p class="pop-body-text">Desk & Club is a blog-style website for computer setup enthusiasts. Featuring clean workspaces and gaming stations, it is a dedicated hub for those who appreciate the art of a well-crafted setup. This website is consistently updated for new styles, moods, and inspiration.</p>
+                            </div>
+                            <div class="pop-body-col">
+                                <span class="pop-body-title">Technologies</span>
+                                <p class="pop-body-text">HTML, CSS/SCSS, JavaScript, Node.js, React, GSAP.js, Vite & Netlify</p>
+                            </div>
+                        </div>
+                        <div class="pop-img">
+                            <img src="https://i.imgur.com/uzd63iX.png" />
+                        </div>
+                    </div>
+                </div>
+        <!--DisplayMe-->
+                <div id="popup-content-5" class="popup-content">
+                    <div class="pop-wrapper">
+                        <div class="pop-heading">
+                            <span class="pop-title">DisplayMe</span>
+                            <div class="pop-link-wrap">
+                                <span class="pop-links">Coming Soon</span>
+                                <!-- <a href="#" class="pop-links">GitHub</a>
+                                <a href="#" class="pop-links">Demo</a> -->
+                            </div>
+                        </div>
+                        <div class="pop-body">
+                            <div class="pop-body-col">
+                                <span class="pop-body-title">Description</span>
+                                <p class="pop-body-text">DisplayMe is an API project designed to help users create their ideal workspace by providing a virtual platform to compare popular monitors side by side. With an easy-to-use interface in the works and vast selection of monitors that are pulled via the API, DisplayMe allows users to gain valuable insights into monitor performance and make informed decisions when it comes to choosing the right equipment for their workstation.</p>
+                            </div>
+                            <div class="pop-body-col">
+                                <span class="pop-body-title">Technologies</span>
+                                <p class="pop-body-text">JavaScript, Node.js, Express.js, Passport.js, MongoDB, React, & Axios</p>
+                                <br>
+                                <p class="pop-body-text"><em>This project is currenly a work in progress in collaboration with developer alex-rrr999</em></p>
+                            </div>
+                        </div>
+                        <div class="pop-img">
+                            <img src="https://i.imgur.com/dkcTkwI.png" />
+                        </div>
+                    </div>
+                </div>
+        </section>
+        </div>
+    </main>
+    <script type="module" src="../js/modal.js"></script>
+    <script type="module" src="../js/script.js"></script>
+    <script type="module" src="../js/pointer.js"></script>
 </body>
