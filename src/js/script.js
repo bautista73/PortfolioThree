@@ -179,8 +179,7 @@ const fragmentShader = `
     vec3 brightness = vec3(0.5, 0.5, 0.5);
     vec3 contrast = vec3(0.5, 0.5, 0.5);
     vec3 oscilation = vec3(1.0, 1.0, 1.0);
-    vec3 phase = vec3(0.1, 0.1, 0.1);
-
+    vec3 phase = vec3(0.0, 0.1, 0.2);  
   
     vec3 color = cosPalette(distort, brightness, contrast, oscilation, phase);
     
@@ -239,7 +238,7 @@ class Scene {
         uAmplitude: { value: settings.amplitude },
         uIntensity: { value: settings.intensity },
       },
-      wireframe: true,
+      // wireframe: true,
     });
     this.mesh = new THREE.Mesh(geometry, material);
     this.scene.add(this.mesh);

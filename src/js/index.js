@@ -17,6 +17,7 @@ function transitionToPage(href) {
   
   var xhr = new XMLHttpRequest();
   xhr.open('GET', href);
+  
   xhr.onload = function() {
 
     var newPageContent = xhr.responseText;
@@ -33,16 +34,25 @@ function transitionToPage(href) {
       let newSettings;
       if (window.location.href.includes('works.html')) {
         newSettings = {
-          speed: 0.5,
-          density: 2.0,
-          strength: 0.5,
-          frequency: 7.0,
-          amplitude: 8.0,
-          intensity: 10.0,
+          speed: 0.08,
+          density: 1.5,
+          strength: 0.20,
+          frequency: 2.8,
+          amplitude: 9.0,
+          intensity: 7.0,
+        };
+      } else if (window.location.href.includes('about.html')) {
+        newSettings = {
+          speed: 0.04,
+          density: 1.5,
+          strength: 0.2,
+          frequency: 2.2,
+          amplitude: 4.5,
+          intensity: 7.0,
         };
       } else {
         newSettings = {
-          speed: 0.03,
+          speed: 0.05,
           density: 1.5,
           strength: 0.2,
           frequency: 3.0,
