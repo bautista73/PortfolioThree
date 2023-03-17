@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 export let settings = {
-  speed: 0.05,
+  speed: 0.02,
   density: 1.5,
   strength: 0.2,
   frequency: 3.0,
@@ -179,7 +179,7 @@ const fragmentShader = `
     vec3 brightness = vec3(0.5, 0.5, 0.5);
     vec3 contrast = vec3(0.5, 0.5, 0.5);
     vec3 oscilation = vec3(1.0, 1.0, 1.0);
-    vec3 phase = vec3(0.0, 0.1, 0.2);  
+    vec3 phase = vec3(0.0, 0.1, 0.2); 
   
     vec3 color = cosPalette(distort, brightness, contrast, oscilation, phase);
     
@@ -187,23 +187,22 @@ const fragmentShader = `
   }  
 `;
 
-class Scene {
+export class Scene {
   constructor() {
     const canvas = document.querySelector('#webgl');
 
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, canvas });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
-    this.renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-    // this.renderer.setClearColor('#0a0a0a', 1);
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
     
     this.camera = new THREE.PerspectiveCamera(
-      36,
-      canvas.clientWidth / canvas.clientHeight,
+      10,
+      window.innerWidth / window.innerHeight,
       0.1,
       1000
     );
 
-    this.camera.position.set(0, 0, 4);    
+    this.camera.position.set(0, 0, 3);
     
     this.scene = new THREE.Scene();
     
@@ -225,7 +224,7 @@ class Scene {
   }  
   
   addElements() {
-    const geometry = new THREE.IcosahedronBufferGeometry(1, 64);
+    const geometry = new THREE.IcosahedronBufferGeometry(1, 44);
     const material = new THREE.ShaderMaterial({
       vertexShader,
       fragmentShader,
@@ -238,7 +237,7 @@ class Scene {
         uAmplitude: { value: settings.amplitude },
         uIntensity: { value: settings.intensity },
       },
-      // wireframe: true,
+      wireframe: true,
     });
     this.mesh = new THREE.Mesh(geometry, material);
     this.scene.add(this.mesh);
@@ -249,18 +248,23 @@ class Scene {
   }  
   
   resize() {
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+  
+    this.camera.aspect = width / height;
+    
+    // update canvas size
     const canvas = this.renderer.domElement;
-    canvas.width = canvas.clientWidth;
-    canvas.height = canvas.clientHeight;
-    canvas.style.width = '100%';
-    canvas.style.height = '100%';
-
-    this.camera.aspect = canvas.clientWidth / canvas.clientHeight;
-    this.renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-    this.renderer.setPixelRatio(window.devicePixelRatio);
-
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    
+    // update renderer size
+    this.renderer.setSize(width, height);
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  
     this.camera.updateProjectionMatrix();
   }
+  
   
   animate() {
     requestAnimationFrame(this.animate.bind(this));

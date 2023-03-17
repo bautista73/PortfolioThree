@@ -5,23 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brandon Bautista</title>
     <style lang="scss"></style>
-    <!-- <link rel="stylesheet" type="text/css" href="./assets/style.css" /> -->
     <link rel="stylesheet" type="text/css" href="./assets/main.scss" />
     <script type="module" src="./js/script.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a class="hoverable" href="/">Brandon Bautista</a></li>
-            </ul>
-            <ul>
-                <li><a class="hoverable" href="./pages/works.html">Selected Works</a></li>
-                <li>/</li>
-                <li><a class="hoverable" href="./pages/about.html">About Me</a></li>
-            </ul>
-        </nav>
-    </header>
     <canvas id="webgl"></canvas>
     <div class="cursor">
         <div class="cursor__ball cursor__ball--big ">
@@ -35,17 +22,27 @@
             </svg>
         </div>
     </div>
+    <header>
+        <nav class="tabs">
+            <button class="tab active" data-target="tab1">Brandon Bautista</button>
+            <div class="button-wrapper">
+                <button class="tab" data-target="tab2">Selected Works</button>
+                <span>/</span>
+                <button class="tab" data-target="tab3">About Me</button>
+            </div>
+        </nav>
+    </header>
     <main>
-        <div id="container">
-            <section id="home">
-                <div class="title">
-                    <span class="title__text">Interactive Developer</span>
-                    <div class="text-wrap">
-                        <div class="title__amp">&</div><Experience class="title__text">Experience Designer</span>
-                    </div>
+        <section id="tab1" class="tab-content active">
+            <div class="title">
+                <span class="title__text">Interactive Developer</span>
+                <div class="text-wrap">
+                    <div class="title__amp">&</div><Experience class="title__text">Experience Designer</span>
                 </div>
-            </section>
-        </div>
+            </div>  
+        </section>
+        <section id="tab2" class="tab-content">Content for Tab 2</section>
+        <section id="tab3" class="tab-content">Content for Tab 3</section>
     </main>
     <script type="module" src="./js/index.js"></script>
     <script type="module" src="./js/pointer.js"></script>

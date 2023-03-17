@@ -1,99 +1,65 @@
-import { settings} from '../js/script.js';
 import { gsap } from 'gsap';
+import { Scene } from '../js/script.js';
 
-window.addEventListener('click', function(event) {
+const tabs = document.querySelectorAll('.tab');
+const tabContents = document.querySelectorAll('.tab-content');
 
-  if (event.target.tagName === 'A') {
+const scene = new Scene();
 
-    event.preventDefault();
+tabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.target;
 
-    var href = event.target.getAttribute('href');
+    tabs.forEach((t) => {
+      t.classList.remove('active');
+    });
 
-    transitionToPage(href);
-  }
+    tabContents.forEach((tabContent) => {
+      if (tabContent.id === target) {
+        tabContent.classList.add('active');
+      } else {
+        tabContent.classList.remove('active');
+      }
+    });
+
+    tab.classList.add('active');
+
+    let newPosition;
+
+    switch (target) {
+      case 'tab1':
+        newPosition = { x: 0, y: 0, z: 3 };
+        break;
+      case 'tab2':
+        newPosition = { x: 0, y: 0, z: 15 };
+        break;
+      case 'tab3':
+        newPosition = { x: 0, y: 0, z: 5 };
+        break;
+      default:
+        newPosition = { x: 0, y: 0, z: 3 };
+    }
+
+    gsap.to(scene.camera.position, {
+      duration: 1, // Set duration in seconds
+      x: newPosition.x,
+      y: newPosition.y,
+      z: newPosition.z,
+      ease: 'power2.inOut', // Set easing function
+    });
+  });
 });
 
-function transitionToPage(href) {
-  
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', href);
-  
-  xhr.onload = function() {
-
-    var newPageContent = xhr.responseText;
-    history.pushState(null, null, href);
-    var container = document.getElementById('container');
-    container.style.opacity = 0;
-
-    setTimeout(function() {
-      container.innerHTML = newPageContent;
-      container.style.opacity = 1;
-
-      container.classList.add("fade-out");
-
-      let newSettings;
-      if (window.location.href.includes('works.html')) {
-        newSettings = {
-          speed: 0.08,
-          density: 1.5,
-          strength: 0.20,
-          frequency: 2.8,
-          amplitude: 9.0,
-          intensity: 7.0,
-        };
-      } else if (window.location.href.includes('about.html')) {
-        newSettings = {
-          speed: 0.04,
-          density: 1.5,
-          strength: 0.2,
-          frequency: 2.2,
-          amplitude: 4.5,
-          intensity: 7.0,
-        };
-      } else {
-        newSettings = {
-          speed: 0.05,
-          density: 1.5,
-          strength: 0.2,
-          frequency: 3.0,
-          amplitude: 6.0,
-          intensity: 7.0,
-        };
-      }
-      gsap.to(settings, {
-        duration: 1,
-        ease: "power2.inOut", 
-        ...newSettings,
-      }).then(() => {
-
-      });
-      initWebGL();
-    }, 300);
-  };
-  xhr.send();
-}
 
 
-      // // Check which page is being loaded
-      // if (window.location.href.includes('works.html')) {
-      //   // Change the settings for the works page
-      //   settings.speed = 0.05;
-      //   settings.density = 1.6;
-      //   settings.strength = 0.3;
-      //   settings.frequency = 4.0;
-      //   settings.amplitude = 7.0;
-      //   settings.intensity = 8.0;
-      // } else {
-      //   // Set default settings for other pages
-      //   settings.speed = 0.03;
-      //   settings.density = 1.5;
-      //   settings.strength = 0.2;
-      //   settings.frequency = 3.0;
-      //   settings.amplitude = 6.0;
-      //   settings.intensity = 7.0;
-      // }      
-      
-      // Re-initialize the WebGL canvas if necessary
-      // (e.g. if the new page requires different WebGL settings)
 
+
+// const canvasButton = document.querySelector('#canvas-button-square');
+// const canvas = document.querySelector('#webgl');
+
+// canvasButton.addEventListener('click', () => {
+//   canvas.style.width = '50%';
+//   canvas.style.right = '0';
+//   canvas.style.transition = 'width 0.5s ease-in-out, right 0.5s ease-in-out';
+// });
 
