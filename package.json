@@ -19,9 +19,11 @@
     "axios": "^1.3.4",
     "dat.gui": "^0.7.9",
     "gsap": "^3.11.4",
+    "imagesloaded": "^5.0.0",
     "jquery": "^3.6.4",
     "locomotive-scroll": "^4.1.4",
     "pug": "^3.0.2",
+    "split-type": "^0.3.3",
     "three": "^0.148.0"
   }
 }

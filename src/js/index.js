@@ -31,10 +31,10 @@ tabs.forEach((tab) => {
         newPosition = { x: 0, y: 0, z: 3 };
         break;
       case 'tab2':
-        newPosition = { x: 0, y: 0, z: 15 };
+        newPosition = { x: 0, y: 0, z: 0 };
         break;
       case 'tab3':
-        newPosition = { x: 0, y: 0, z: 5 };
+        newPosition = { x: 0, y: 0, z: 20 };
         break;
       default:
         newPosition = { x: 0, y: 0, z: 3 };

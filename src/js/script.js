@@ -7,7 +7,7 @@ export let settings = {
   strength: 0.2,
   frequency: 3.0,
   amplitude: 6.0,
-  intensity: 7.0,
+  intensity: 6.0,
 };
 
 //Default Settings
@@ -196,7 +196,7 @@ export class Scene {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     
     this.camera = new THREE.PerspectiveCamera(
-      10,
+      8,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
@@ -224,7 +224,7 @@ export class Scene {
   }  
   
   addElements() {
-    const geometry = new THREE.IcosahedronBufferGeometry(1, 44);
+    const geometry = new THREE.IcosahedronBufferGeometry(1, 50);
     const material = new THREE.ShaderMaterial({
       vertexShader,
       fragmentShader,

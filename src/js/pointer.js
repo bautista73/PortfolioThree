@@ -32,7 +32,7 @@ function onMouseMove(e) {
 function onMouseHover() {
   gsap.to(bigBall, {
     duration: 0.3,
-    scale: 3,
+    scale: 2,
     ease: 'power2.out'
   });
 }
