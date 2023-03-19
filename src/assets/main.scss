@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
 
+@import url('./transition.scss');
+
 $gray: rgb(200,200,200); 
 
 :root {
@@ -49,8 +51,7 @@ canvas#webgl {
     bottom: 0;
     max-width: 90%;
     max-height: 80%;
-    opacity: 0.9;
-    transition: width 0.5s ease;
+    opacity: 0.4;
 }
 
 .cursor {
@@ -78,7 +79,7 @@ header {
     top: 0;
     width: 100%;
     height: auto;
-    z-index: 999;
+    z-index: 99;
 
     .tabs {
         width: 90%;
@@ -179,4 +180,5 @@ header {
     width: 100%;
     height: 100vh;
     z-index: 10;
+    animation: fadeIn 1.5s 1s forwards;
 }

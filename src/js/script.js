@@ -202,7 +202,7 @@ export class Scene {
       1000
     );
 
-    this.camera.position.set(0, 0, 3);
+    this.camera.position.set(0, 0, 6);
     
     this.scene = new THREE.Scene();
     
@@ -224,7 +224,7 @@ export class Scene {
   }  
   
   addElements() {
-    const geometry = new THREE.IcosahedronBufferGeometry(1, 50);
+    const geometry = new THREE.IcosahedronGeometry(1, 60);
     const material = new THREE.ShaderMaterial({
       vertexShader,
       fragmentShader,
@@ -237,7 +237,7 @@ export class Scene {
         uAmplitude: { value: settings.amplitude },
         uIntensity: { value: settings.intensity },
       },
-      wireframe: true,
+      // wireframe: true,
     });
     this.mesh = new THREE.Mesh(geometry, material);
     this.scene.add(this.mesh);

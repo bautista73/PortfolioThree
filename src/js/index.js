@@ -28,7 +28,7 @@ tabs.forEach((tab) => {
 
     switch (target) {
       case 'tab1':
-        newPosition = { x: 0, y: 0, z: 3 };
+        newPosition = { x: 0, y: 0, z: 6 };
         break;
       case 'tab2':
         newPosition = { x: 0, y: 0, z: 0 };
@@ -37,7 +37,7 @@ tabs.forEach((tab) => {
         newPosition = { x: 0, y: 0, z: 20 };
         break;
       default:
-        newPosition = { x: 0, y: 0, z: 3 };
+        newPosition = { x: 0, y: 0, z: 6 };
     }
 
     gsap.to(scene.camera.position, {
