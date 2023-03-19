@@ -17,14 +17,13 @@
 
 
 .main-wrap {
-	height: 100vh;
+	height: 100%;
     width: 90%;
     margin: auto;
 	display: grid;
 	grid-template-columns: 100%;
 	grid-template-areas: 'content';
 	grid-template-rows: min-content 1fr;
-	grid-row-gap: 8vh;
     overflow: hidden;
 }
 
@@ -264,7 +263,7 @@ a:focus-visible {
 
 .preview__img {
 	grid-area: 1 / 1 / 2 / -1;
-	width: 90vw;
+	width: 120%; /* width override to fill row */
     min-height: 200px;
     overflow: hidden;
     position: relative;
@@ -303,6 +302,7 @@ a:focus-visible {
 	line-height: 1.1;
 	opacity: 0;
     width: auto;
+    white-space: normal;
 }
 
 .preview__column > span {
@@ -325,7 +325,8 @@ a:focus-visible {
 
 .preview__column:not(.preview__column--start) {
 	grid-row: 2 / span 1;
-    background-color: palevioletred;
+    
+    grid-column: span 2;
 }
 
 .preview__back {
