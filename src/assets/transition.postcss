@@ -38,6 +38,11 @@
     display: inline-block;
 }
 
+.oh__wrapper {
+	display: flex;
+	gap: 5px;
+}
+
 .line {
 	transform-origin: 0 50%;
 	white-space: wrap;
@@ -81,31 +86,23 @@
 
 a {
 	text-decoration: none;
-	color: var(--color-link);
+	color: white;
+	background-color: transparent;
 	outline: none;
 	white-space: nowrap;
 	overflow: hidden;
 	position: relative;
-}
+	
+	border: 2px solid white;
+	padding: 5px;
+	border-radius: 24px;
 
-a:not(.frame__title-back):not(.item__link)::before {
-	content: '';
-	height: 1px;
-	width: 100%;
-	background: currentColor;
-	position: absolute;
-	top: 92%;
-	transition: transform 0.3s;
-	transform-origin: 0% 50%;
-}
-
-a:not(.frame__title-back):not(.item__link):hover::before {
-	transform: scaleX(0);
-	transform-origin: 100% 50%;
+	transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 a:hover {
-	color: var(--color-link-hover);
+	color: black;
+	background-color: white;
 	outline: none;
 }
 
@@ -114,7 +111,7 @@ a:hover {
 }
 
 .preview-visible a:hover {
-	color: var(--color-link-hover-alt);
+	color: black;
 }
 
 a:focus {
@@ -153,10 +150,11 @@ a:focus-visible {
 }
 
 .item {
-	margin-bottom: 5rem;
+	margin-bottom: 0.5rem;
 	display: grid;
 	grid-template-columns: 100%;
-	grid-template-rows: 5px auto auto 1fr auto;
+	grid-template-rows: 20px auto auto 1fr auto;
+	height: 90%;
 }
 
 .item__meta {
@@ -167,9 +165,10 @@ a:focus-visible {
 }
 
 .item__title {
-	font-weight: 300;
-	font-size: 2rem;
-	margin-bottom: 0.5rem;
+	font-weight: 400;
+	font-size: 35px !important;
+	margin: 0.5rem 0;
+	padding: 0;
 }
 
 .item__img {
@@ -177,7 +176,8 @@ a:focus-visible {
 	overflow: hidden;
 	width: 100%;
 	aspect-ratio: 500/333;
-    
+	margin: 0;
+	padding: 0;
 }
 
 .item__img-inner {
@@ -188,9 +188,9 @@ a:focus-visible {
 }
 
 .item__desc {
-	margin-top: 2.5rem;
-	line-height: 1.1;
-    
+	margin: 1rem 0 0 0;
+	line-height: 1.4;
+	padding: 0;
 }
 
 .item__link {
@@ -321,6 +321,9 @@ a:focus-visible {
 
 .preview__column--start {
 	grid-area: 2 / 1 / 2 / 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .preview__column:not(.preview__column--start) {
@@ -344,7 +347,7 @@ a:focus-visible {
     justify-content: flex-start;
     gap: 20px;
     color: rgb(200, 200, 200);
-    text-transform: uppercase;
+    text-transform: lowercase;
     transition: stroke 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
