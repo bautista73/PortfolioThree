@@ -87,7 +87,7 @@ header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: auto; 
+        margin: auto;
         .tab {
             cursor: pointer;
             color: white;
@@ -95,6 +95,7 @@ header {
             background: none;
             border: none;
             font-size: 15px;
+            text-transform: uppercase;
             border-bottom: 1px solid transparent;
             transition: border-bottom 0.2s ease-in-out, color 0.3s ease-in-out;
             padding: 0;
@@ -181,4 +182,121 @@ header {
     height: 100vh;
     z-index: 10;
     animation: fadeIn 1.5s 1s forwards;
+}
+
+#tab3 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    pointer-events: none;
+
+    .about__wrap {
+        width: 90%;
+        height: 90%;
+        margin: auto;
+       
+        &__top {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+       
+            &-left {
+                width: 40%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 3rem;
+
+                & span {
+                    width: 70%;
+                    font-size: 28px;
+                    font-weight: 400;
+                }
+
+                .text-wrapper {
+                    display: flex;
+                    align-items: center;
+                }
+
+                & .amp {
+                    font-size: 22px;
+                    height: 1.7rem;
+                    width: 1.7rem;
+                    min-height: 1.7rem;
+                    min-width: 1.7rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 2px solid white;
+                    border-radius: 50%;
+                    margin-right: 0.5rem;
+                }
+
+                &-sub {
+                    color: rgb(200,200,200);
+                }
+            }
+
+            &__right {
+                width: 32%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: center;
+                gap: 3rem;
+
+                &-text {
+                    color: rgb(200,200,200);
+                }
+
+                &-text, &-sub {
+                    text-align: right;
+                    font-size: 28px;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        &__bottom {
+            // background-color: rgba(175, 238, 238, 0.2);
+            width: 100%;
+            height: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            span {
+                text-transform: uppercase;
+            }
+
+            ul {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                list-style: none;
+
+                li {
+                    font-size: 15px;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    width: fit-content;
+                    cursor: pointer;
+                    pointer-events: auto;
+                    border-bottom: 2px solid transparent;
+                    transition: border-bottom 0.3s ease-in-out, color 0.3s ease-in-out;
+                    color: white;
+
+                    &:hover {
+                        border-bottom: 2px solid white;
+                    }
+                }
+            }
+
+        }  
+    }  
 }

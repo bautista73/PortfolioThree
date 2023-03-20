@@ -38,6 +38,10 @@
     display: inline-block;
 }
 
+.oh__cap {
+	text-transform: uppercase;
+}
+
 .oh__wrapper {
 	display: flex;
 	gap: 5px;
@@ -92,7 +96,8 @@ a {
 	white-space: nowrap;
 	overflow: hidden;
 	position: relative;
-	
+	font-size: 15px;
+
 	border: 2px solid white;
 	padding: 5px;
 	border-radius: 24px;
@@ -142,7 +147,8 @@ a:focus-visible {
 
 .content {
 	grid-area: content;
-	max-width: 400px;
+	width: 100%;
+	height: 100%;
 }
 
 .content--hidden {
@@ -161,12 +167,12 @@ a:focus-visible {
     font-weight: 500;
     color: rgb(190,190,190);
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .item__title {
 	font-weight: 400;
-	font-size: 35px !important;
+	font-size: 32px !important;
 	margin: 0.5rem 0;
 	padding: 0;
 }
@@ -189,7 +195,8 @@ a:focus-visible {
 
 .item__desc {
 	margin: 1rem 0 0 0;
-	line-height: 1.4;
+	font-size: 15px;
+	line-height: 1.5;
 	padding: 0;
 }
 
@@ -241,6 +248,7 @@ a:focus-visible {
 	position: relative;
 	grid-area: content;
 	pointer-events: none;
+	height: auto;
 }
 
 .preview {
@@ -299,7 +307,7 @@ a:focus-visible {
 }
 
 .preview__column p {
-	line-height: 1.1;
+	line-height: 1.4;
 	opacity: 0;
     width: auto;
     white-space: normal;
@@ -312,7 +320,8 @@ a:focus-visible {
 .preview__column-title {
 	font-weight: 300;
 	margin-top: 0;
-	font-size: 1rem;
+	font-size: 15px;
+	text-transform: uppercase;
 }
 
 .preview__column-title:not(.preview__column-title--main) {
@@ -324,11 +333,11 @@ a:focus-visible {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	height: 50%;
 }
 
 .preview__column:not(.preview__column--start) {
 	grid-row: 2 / span 1;
-    
     grid-column: span 2;
 }
 
@@ -345,9 +354,9 @@ a:focus-visible {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 20px;
+    gap: 5px;
     color: rgb(200, 200, 200);
-    text-transform: lowercase;
+    text-transform: uppercase;
     transition: stroke 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
@@ -357,6 +366,7 @@ a:focus-visible {
 }
 
 @media screen and (min-width: 53em) {
+
 	.content {
         margin-top: 15vh;
         height: 100%;
