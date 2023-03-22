@@ -39,7 +39,7 @@
 }
 
 .oh__cap {
-	text-transform: uppercase;
+	text-transform: capitalize;
 }
 
 .oh__wrapper {
@@ -91,23 +91,20 @@
 a {
 	text-decoration: none;
 	color: white;
-	background-color: transparent;
 	outline: none;
 	white-space: nowrap;
 	overflow: hidden;
 	position: relative;
 	font-size: 15px;
 
-	border: 2px solid white;
-	padding: 5px;
-	border-radius: 24px;
+	padding: 0;
+	border-bottom: 1px solid transparent;
 
-	transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+	transition: border-bottom 0.3s ease-in-out;
 }
 
 a:hover {
-	color: black;
-	background-color: white;
+	border-bottom: 1px solid white;
 	outline: none;
 }
 
@@ -116,7 +113,7 @@ a:hover {
 }
 
 .preview-visible a:hover {
-	color: black;
+	color: white;
 }
 
 a:focus {
@@ -269,6 +266,11 @@ a:focus-visible {
 	pointer-events: auto;
 }
 
+.preview__link {
+	display: flex;
+	align-items: center;
+}
+
 .preview__img {
 	grid-area: 1 / 1 / 2 / -1;
 	width: 120%; /* width override to fill row */
@@ -321,7 +323,7 @@ a:focus-visible {
 	font-weight: 300;
 	margin-top: 0;
 	font-size: 15px;
-	text-transform: uppercase;
+	text-transform: capitalize;
 }
 
 .preview__column-title:not(.preview__column-title--main) {
@@ -356,7 +358,7 @@ a:focus-visible {
     justify-content: flex-start;
     gap: 5px;
     color: rgb(200, 200, 200);
-    text-transform: uppercase;
+    text-transform: capitalize;
     transition: stroke 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 

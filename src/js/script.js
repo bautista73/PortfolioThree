@@ -196,13 +196,14 @@ export class Scene {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     
     this.camera = new THREE.PerspectiveCamera(
-      8,
+      4,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
     );
 
-    this.camera.position.set(0, 0, 6);
+    this.camera.position.set(15, 10, 4);
+    
     
     this.scene = new THREE.Scene();
     

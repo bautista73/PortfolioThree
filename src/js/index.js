@@ -27,11 +27,10 @@ tabs.forEach((tab) => {
 
     let newPosition;
 
-    
     switch (target) {
       
       case 'tab1':
-        newPosition = { x: 0, y: 0, z: 7 };
+        newPosition = { x: 10, y: 2, z: 5 };
         tabContents.forEach((tabContent) => {
           if (tabContent.id === target) {
             gsap.fromTo(
@@ -47,7 +46,7 @@ tabs.forEach((tab) => {
         break;
 
       case 'tab2':
-        newPosition = { x: 0, y: 0, z: 2 };
+        newPosition = { x: 0, y: 0, z: 1 };
         tabContents.forEach((tabContent) => {
           if (tabContent.id === target) {
             gsap.fromTo(
@@ -63,7 +62,7 @@ tabs.forEach((tab) => {
         break;
 
       case 'tab3':
-        newPosition = { x: 0, y: 0, z: 3 };
+        newPosition = { x: 5, y: -5, z: 65 };
         tabContents.forEach((tabContent) => {
           if (tabContent.id === target) {
             gsap.fromTo(
@@ -80,7 +79,7 @@ tabs.forEach((tab) => {
         break;
 
       default:
-        newPosition = { x: 0, y: 0, z: 6 };
+        newPosition = { x: 10, y: 10, z: 4};
     }
 
     gsap.to(scene.camera.position, {
