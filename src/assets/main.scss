@@ -35,7 +35,7 @@ body {
     height: 100vh;
     background-color: black;
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     color: white;
 
     &::-webkit-scrollbar { display: none }
@@ -52,7 +52,7 @@ canvas#webgl {
     bottom: 0;
     max-width: 90%;
     max-height: 80%;
-    opacity: 0.4;
+    opacity: 0.6;
 }
 
 .cursor {
@@ -194,89 +194,85 @@ header {
         align-items: center;
         
         .info {
-            width: 50%;
+            width: 60%;
             height: 80%;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            background-color: #a17445;
+            gap: 2rem;
 
             &__title {
-                font-size: 28px;
-                font-weight: 400;
+                font-size: 17px;
+                font-weight: 300;
                 color: rgb(200,200,200);
-                margin: 0 !important;
+                margin: 0;
+                width: 15%;
             }
 
             &__about {
                 display: flex;
-                flex-direction: column;
                 align-items: flex-start;
-                justify-content: flex-start;
                 width: 100%;
 
-                &__text {
-                    font-size: 17px;
-                    line-height: 1.7rem;
-                    margin: 0 !important;
+                .p-wrapper {
+                    width: 80%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    line-height: 1.5rem;
+                    font-size: 15px;
+
+                    &__text {
+                        margin: 0;
+                    }
                 }
             }
 
             &__tech {
                 display: flex;
-                flex-direction: column;
                 align-items: flex-start;
-                justify-content: flex-start;
                 width: 100%;
 
                 &__wrap {
                     display: flex;
                     flex-direction: column;
-                    gap: 0.5rem;
+                    gap: 1rem;
+
+                    &__sub {
+                        font-size: 15px;
+                        font-weight: 300;
+                        margin: 0;
+
+                        &-top {
+                            @extend .info__tech__wrap__sub;
+                        }
+                    }
 
                     &__row {
                         display: flex;
                         flex-wrap: wrap;
-                        gap: 0.3rem;
+                        gap: 0.4rem;
 
                         & span {
-                            font-size: 15px;
+                            font-size: 13px;
+                            color: rgb(200,200,200);
                             background-color: rgb(50, 50, 50);
                             padding: 6px;
                             border-radius: 8px;
                         }
                     }
-
-                    &__sub {
-                        font-size: 17px;
-                        font-weight: 400;
-                        margin: 0;
-
-                        &-top {
-                            font-weight: 400;
-                            font-size: 17px;
-                            margin: 0;
-                        }
-                    }
                 }
             }
             &__contact {
-                position: relative;
                 display: flex;
-                flex-direction: column;
-                width: 90%;
-                height: 20%;
-    
-                &__title {
-
-                }
+                align-items: flex-start;
+                width: 100%;
     
                 &__wrap {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: flex-start;
-                    width: 100%;
+                    gap: 1.5rem;
                     
                     &__email {
                         display: flex;
