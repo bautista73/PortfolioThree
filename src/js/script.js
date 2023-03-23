@@ -196,13 +196,14 @@ export class Scene {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     
     this.camera = new THREE.PerspectiveCamera(
-      4,
+      10,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
     );
-
-    this.camera.position.set(15, 10, 4);
+    
+    this.camera.position.set(1, 1, 10);
+    this.camera.lookAt(0, 0, 0);
     
     
     this.scene = new THREE.Scene();
@@ -241,6 +242,7 @@ export class Scene {
       // wireframe: true,
     });
     this.mesh = new THREE.Mesh(geometry, material);
+    this.mesh.position.set(0, 0, 0);
     this.scene.add(this.mesh);
   }
   

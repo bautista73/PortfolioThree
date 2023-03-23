@@ -176,7 +176,6 @@ header {
     width: 100%;
     height: 100vh;
     z-index: 10;
-    background: rgb(0,0,0);
 }
 
 #tab3 {
@@ -187,24 +186,26 @@ header {
     pointer-events: none;
 
     .info-wrapper {
-        width: 100%;
+        position: relative;
+        width: 90%;
         height: 100%;
+        margin: auto;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
         
         .info {
-            width: 90%;
-            height: 60%;
+            width: 50%;
+            height: 80%;
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
+            background-color: #a17445;
 
             &__title {
                 font-size: 28px;
                 font-weight: 400;
                 color: rgb(200,200,200);
-                // margin: 0 !important;
+                margin: 0 !important;
             }
 
             &__about {
@@ -212,7 +213,7 @@ header {
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: flex-start;
-                width: 35%;
+                width: 100%;
 
                 &__text {
                     font-size: 17px;
@@ -226,10 +227,13 @@ header {
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: flex-start;
-                width: 30%;
+                width: 100%;
 
                 &__wrap {
-                    
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+
                     &__row {
                         display: flex;
                         flex-wrap: wrap;
@@ -246,68 +250,48 @@ header {
                     &__sub {
                         font-size: 17px;
                         font-weight: 400;
-                        margin: 1.5rem 0 !important;
+                        margin: 0;
 
                         &-top {
                             font-weight: 400;
                             font-size: 17px;
-                            margin: 0 0 1.5rem 0;
+                            margin: 0;
                         }
                     }
                 }
             }
-        }
-        .info__contact {
-            position: relative;
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            width: 90%;
-            height: 20%;
-
-            &__title {
-                position: absolute;
-                top: 15%;
-                left: 0;
-            }
-
-            &__wrap {
+            &__contact {
+                position: relative;
                 display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                
-                &__email {
+                flex-direction: column;
+                width: 90%;
+                height: 20%;
+    
+                &__title {
+
+                }
+    
+                &__wrap {
                     display: flex;
-                    align-items: center;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    width: 100%;
                     
-                    
-                    &__sub {
-                        font-size: 17px;
-                        font-weight: 400;
-                        margin: 0;
-                        width: 100%;
+                    &__email {
+                        display: flex;
+                        align-items: center;
+                        
+                        
+                        &__sub {
+                            font-size: 17px;
+                            font-weight: 400;
+                            margin: 0;
+                            width: 100%;
+                        }
                     }
-                }
-
-                &__button {
-                    background: none;
-                    color: white;
-                    font-size: 17px;
-                    pointer-events: auto;
-                    cursor: pointer;
-                    border: none;
-                    border-bottom: 1px solid white;
-                    width: fit-content;
-                    padding: 0;
-                    margin: 0;
-                }
-
-                &__socials {
-                    display: flex;
-                    gap: 1rem;
-
-                    button {
+    
+                    &__button {
                         background: none;
                         color: white;
                         font-size: 17px;
@@ -315,13 +299,32 @@ header {
                         cursor: pointer;
                         border: none;
                         border-bottom: 1px solid white;
+                        width: fit-content;
                         padding: 0;
-
+                        margin: 0;
+                    }
+    
+                    &__socials {
                         display: flex;
-                        align-items: center;
+                        gap: 1rem;
+    
+                        button {
+                            background: none;
+                            color: white;
+                            font-size: 17px;
+                            pointer-events: auto;
+                            cursor: pointer;
+                            border: none;
+                            border-bottom: 1px solid white;
+                            padding: 0;
+    
+                            display: flex;
+                            align-items: center;
+                        }
                     }
                 }
             }
         }
+        
     }
 }
