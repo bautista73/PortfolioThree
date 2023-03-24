@@ -27,7 +27,6 @@
     overflow: hidden;
 }
 
-
 .oh {
 	position: relative;
     overflow: hidden;
@@ -88,48 +87,6 @@
 	}
 }
 
-a {
-	text-decoration: none;
-	color: white;
-	outline: none;
-	white-space: nowrap;
-	overflow: hidden;
-	position: relative;
-	font-size: 15px;
-
-	padding: 0;
-	border-bottom: 1px solid transparent;
-
-	transition: border-bottom 0.3s ease-in-out;
-}
-
-a:hover {
-	border-bottom: 1px solid white;
-	outline: none;
-}
-
-.preview-visible .frame a {
-	color: var(--color-frame-alt);
-}
-
-.preview-visible a:hover {
-	color: white;
-}
-
-a:focus {
-	outline: none;
-	background: lightgrey;
-}
-
-a:focus:not(:focus-visible) {
-	background: transparent;
-}
-
-a:focus-visible {
-	outline: 2px solid red;
-	background: transparent;
-}
-
 .unbutton {
 	background: none;
 	border: 0;
@@ -146,13 +103,18 @@ a:focus-visible {
 	grid-area: content;
 	width: 100%;
 	height: 100%;
+	pointer-events: auto;
+	overflow: auto;
 }
+
+.content::-webkit-scrollbar { display: none }
 
 .content--hidden {
 	pointer-events: none;
 }
 
 .item {
+	position: relative;
 	margin-bottom: 0.5rem;
 	display: grid;
 	grid-template-columns: 100%;
@@ -180,6 +142,7 @@ a:focus-visible {
 	aspect-ratio: 500/333;
 	margin: 0;
 	padding: 0;
+	object-fit: cover;
 }
 
 .item__img-inner {
@@ -197,21 +160,23 @@ a:focus-visible {
 }
 
 .item__link {
+	gap: 5px;
+	box-shadow: none;
 	cursor: pointer;
 	text-transform: lowercase;
 	width: 100%;
 	padding: 0.7rem;
+	font-size: 15px;
 	color: white;
-	background-color: rgb(50, 50, 50);
-	border-radius: 8px;
-	border: none;
 	text-align: center;
-    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+	/* border: 1px solid white; */
+	border-radius: 8px;
+	background-color: rgba(240, 240, 240, 0.3);
+	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .item__link:hover {
-	background: white;
-	border-color: white;
+	background-color: white;
 	color: black;
 }
 
@@ -298,6 +263,14 @@ a:focus-visible {
 .preview__link {
 	display: flex;
 	align-items: center;
+	color: white;
+	font-size: 15px;text-decoration: none;
+	border-bottom: 1px solid transparent;
+	transition: border-bottom 0.3s ease-in-out;
+}
+
+.preview__link:hover {
+	border-bottom: 1px solid white;
 }
 
 .preview__img {
@@ -339,9 +312,18 @@ a:focus-visible {
 
 .preview__column p {
 	line-height: 1.4;
+	font-size: 15px;
 	opacity: 0;
     width: auto;
     white-space: normal;
+}
+
+.tech-stack {
+	font-size: 13px;
+	color: rgb(200,200,200);
+	background-color: rgba(240, 240, 240, 0.22);
+	padding: 6px;
+	border-radius: 8px;
 }
 
 .preview__column > span {
@@ -374,7 +356,7 @@ a:focus-visible {
 
 .preview__back {
 	margin: 2rem auto;
-	stroke: var(--color-link-alt);
+	stroke: rgb(200, 200, 200);
 	cursor: pointer;
 	fill: none;
 	grid-area: 3 / 1 / 4 / 2;
@@ -386,6 +368,7 @@ a:focus-visible {
     align-items: center;
     justify-content: flex-start;
     gap: 5px;
+	font-size: 15px;
     color: rgb(200, 200, 200);
     text-transform: capitalize;
     transition: stroke 0.3s ease-in-out, color 0.3s ease-in-out;

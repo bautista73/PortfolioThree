@@ -30,7 +30,7 @@ tabs.forEach((tab) => {
     switch (target) {
       
       case 'tab1':
-        newPosition = { x: -4, y: -4, z: 0 };
+        newPosition = { x: 4, y: -2, z: 3 };
         meshPosition = { x: 0, y: 0, z: 0 };
         tabContents.forEach((tabContent) => {
           if (tabContent.id === target) {
@@ -47,8 +47,8 @@ tabs.forEach((tab) => {
         break;
 
       case 'tab2':
-        newPosition = { x: 0, y: 0, z: 6 };
-        meshPosition = { x: 0, y: -1.25, z: 1 };
+        newPosition = { x: -2, y: 1, z: 1 };
+        meshPosition = { x: 0, y: -1.3, z: 0 };
         tabContents.forEach((tabContent) => {
           if (tabContent.id === target) {
             gsap.fromTo(
@@ -86,19 +86,19 @@ tabs.forEach((tab) => {
     }
 
     gsap.to(scene.mesh.position, {
-        duration: 1,
+        duration: 1.3,
         x: meshPosition.x,
         y: meshPosition.y,
         z: meshPosition.z,
-        ease: 'power2.inOut',
+        ease: 'power3.out',
     });
 
     gsap.to(scene.camera.position, {
-        duration: 1,
+        duration: 1.3,
         x: newPosition.x,
         y: newPosition.y,
         z: newPosition.z,
-        ease: 'power2.inOut',
+        ease: 'power3.out',
     });
   });
 });
