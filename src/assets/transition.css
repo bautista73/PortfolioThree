@@ -105,6 +105,7 @@
 	height: 100%;
 	pointer-events: auto;
 	overflow: auto;
+	background-color: rgba(192, 143, 28, 0.2);
 }
 
 .content::-webkit-scrollbar { display: none }

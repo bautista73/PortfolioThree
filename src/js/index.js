@@ -30,14 +30,14 @@ tabs.forEach((tab) => {
     switch (target) {
       
       case 'tab1':
-        newPosition = { x: 4, y: -2, z: 3 };
+        newPosition = { x: 4, y: -1, z: 4 };
         meshPosition = { x: 0, y: 0, z: 0 };
         tabContents.forEach((tabContent) => {
           if (tabContent.id === target) {
             gsap.fromTo(
               tabContent, 
               {opacity: 0}, 
-              { duration: 1, opacity: 1, ease: 'power3.in', delay: 0.6 });
+              { duration: 2, opacity: 1, ease: 'power3.in', delay: 0.6 });
           } else {
             gsap.to(
               tabContent, 
@@ -47,8 +47,8 @@ tabs.forEach((tab) => {
         break;
 
       case 'tab2':
-        newPosition = { x: -2, y: 1, z: 1 };
-        meshPosition = { x: 0, y: -1.3, z: 0 };
+        newPosition = { x: -2, y: -1, z: 8 };
+        meshPosition = { x: 0, y: -1.5, z: 0 };
         tabContents.forEach((tabContent) => {
           if (tabContent.id === target) {
             gsap.fromTo(
