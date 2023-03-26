@@ -243,6 +243,7 @@ header {
             // pointer-events: auto;
         }
         
+        .info::-webkit-scrollbar { display: none }
         
         .info {
             width: 60%;
@@ -251,8 +252,9 @@ header {
             justify-content: flex-start;
             flex-direction: column;
             gap: 2rem;
+            overflow: auto;
 
-            @media screen and (max-width: 480px) {
+            @media screen and (max-width: 780px) {
                 width: 100%;
             }
 
