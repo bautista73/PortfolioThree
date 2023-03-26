@@ -127,10 +127,12 @@ header {
 .tab-content {
     opacity: 0;
     display: block;
+    pointer-events: none !important;
     // transition: opacity 0.5s ease-in-out;
     
     &.visible {
         opacity: 1;
+        pointer-events: auto !important;
     }
 }
   
@@ -139,7 +141,6 @@ header {
     width: 100%;
     height: 100vh;
     z-index: 10;
-    pointer-events: none;
 
     @media screen and (max-width: 480px) {
 
@@ -225,7 +226,6 @@ header {
     width: 100%;
     height: 100vh;
     z-index: 10;
-    pointer-events: none;
 
     .info-wrapper::-webkit-scrollbar { display: none }
 
@@ -240,7 +240,7 @@ header {
         @media screen and (max-width: 480px) {
             height: 100vh;
             overflow: auto;
-            pointer-events: auto;
+            // pointer-events: auto;
         }
         
         
@@ -361,8 +361,8 @@ header {
                         background: none;
                         color: white;
                         font-size: 15px;
-                        pointer-events: auto;
-                        cursor: pointer;
+                        // pointer-events: auto;
+                        // cursor: pointer;
                         border: none;
                         border-bottom: 1px solid white;
                         width: fit-content;
@@ -379,8 +379,8 @@ header {
                             background: none;
                             color: white;
                             font-size: 15px;
-                            pointer-events: auto;
-                            cursor: pointer;
+                            // pointer-events: auto;
+                            // cursor: pointer;
                             border: none;
                             border-bottom: 1px solid white;
                             padding: 0;
