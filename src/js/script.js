@@ -2,12 +2,12 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 export let settings = {
-  speed: 0.02,
+  speed: 0.03,
   density: 1.0,
-  strength: 0.7,
-  frequency: 1.5,
-  amplitude: 6.0,
-  intensity: 2.0,
+  strength: 0.3,
+  frequency: 3.0,
+  amplitude: 5.2,
+  intensity: 2.8,
 };
 
 //Main
@@ -184,10 +184,10 @@ const fragmentShader = `
     float distort = vDistort * uIntensity;
     
     // base colors
-    vec3 brightness = vec3(0.5, 0.5, 0.5);
-    vec3 contrast = vec3(0.5, 0.5, 0.5);
-    vec3 oscilation = vec3(1.0, 1.0, 1.0);
-    vec3 phase = vec3(0.0, 0.0, 0.0); 
+    vec3 brightness = vec3(0.5);
+    vec3 contrast = vec3(0.5);
+    vec3 oscilation = vec3(0.5);
+    vec3 phase = vec3(0.4); 
   
     vec3 color = cosPalette(distort, brightness, contrast, oscilation, phase);
     
@@ -234,7 +234,7 @@ export class Scene {
   }  
   
   addElements() {
-    const geometry = new THREE.DodecahedronGeometry(1, 50);
+    const geometry = new THREE.DodecahedronGeometry(1, 60);
     const material = new THREE.ShaderMaterial({
       vertexShader,
       fragmentShader,
