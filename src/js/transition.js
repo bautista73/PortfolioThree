@@ -2,23 +2,44 @@ import { gsap } from 'gsap';
 import { Item } from './item.js';
 import { Preview } from './preview.js';
 
-// body element
+//work list hover
+
+const itemAll = document.querySelectorAll('.item');
+
+itemAll.forEach((item) => {
+  const imageWrap = item.querySelector('.item__image-wrap');
+  const image = item.querySelector('.item__image');
+  const title = item.querySelector('.item__title');
+
+  item.addEventListener('mouseenter', () => {
+    gsap.killTweensOf(imageWrap);
+    gsap.killTweensOf(image);
+    gsap.to(imageWrap, { duration: 0.5, x: '0%', ease: 'power2.out' });
+    gsap.to(image, { duration: 0.5, visibility: 'visible' });
+    gsap.to(title, { duration: 0.5, marginLeft: '210px', ease: 'power2.out' });
+  });
+
+  item.addEventListener('mouseleave', () => {
+    gsap.killTweensOf(imageWrap);
+    gsap.killTweensOf(image);
+    gsap.to(imageWrap, { duration: 0.5, x: '-100%', ease: 'power2.out' });
+    gsap.to(title, { duration: 0.5, marginLeft: '2px', ease: 'power2.out' });
+    gsap.to(image, { duration: 0.5, visibility: 'hidden', delay: 0.5, onComplete: () => {
+        gsap.set(image, { clearProps: 'visibility' });
+      }});
+  });
+});
+
+
+// full screen transition
+
 const body = document.body;
-
-// .content element
 const contentEl = document.querySelector('.content');
-
-// frame element
 const frameEl = document.querySelector('.frame');
-
-// top and bottom overlay overlay elements
 const overlayRows = [...document.querySelectorAll('.overlay__row')];
-
-// Preview instances array
 const previews = [];
 [...document.querySelectorAll('.preview')].forEach(preview => previews.push(new Preview(preview)));
 
-// Item instances array
 const items = [];
 [...document.querySelectorAll('.item')].forEach((item, pos) => items.push(new Item(item, previews[pos])));
 
@@ -31,7 +52,6 @@ const openItem = item => {
         }
     })
     .add(() => {
-        // pointer events none to the content
         contentEl.classList.add('content--hidden');
     }, 'start')
 
@@ -53,7 +73,7 @@ const openItem = item => {
         }, 'start')
         item.preview.DOM.el.classList.add('preview--current');
     }, 'content')
-    // Image animation (reveal animation)
+
     .to([item.preview.DOM.image, item.preview.DOM.imageInner], {
         startAt: {y: pos => pos ? '101%' : '-101%'},
         y: '0%'
@@ -117,7 +137,6 @@ const closeItem = item => {
         y: '-101%'
     }, 'start')
     
-    // animate frame element
     .to(frameEl, {
         opacity: 0,
         y: '-100%',
@@ -133,7 +152,7 @@ const closeItem = item => {
     .addLabel('grid', 'start+=0.6')
 
     .to(overlayRows, {
-        //ease: 'expo',
+
         scaleY: 0,
         onComplete: () => {
             item.preview.DOM.el.classList.remove('preview--current');
@@ -143,8 +162,8 @@ const closeItem = item => {
 };
 
 for (const item of items) {
-    // Opens the item preview
     item.DOM.link.addEventListener('click', () => openItem(item));
-    // Closes the item preview
     item.preview.DOM.backCtrl.addEventListener('click', () => closeItem(item));
 }
+
+

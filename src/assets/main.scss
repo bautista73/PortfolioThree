@@ -37,7 +37,7 @@ body {
     background-color: rgb(20, 20, 20);
     font-family: 'Inter', sans-serif;
     font-size: 17px;
-    color: white;
+    color: rgb(220, 220, 220);
 
     &::-webkit-scrollbar { display: none }
 
@@ -80,26 +80,24 @@ canvas#webgl {
 }
 
 header {
-    position: fixed;
+    position: relative;
     top: 0;
     width: 100%;
     max-width: 1920px;
     margin: auto;
     height: auto;
-    z-index: 99;
-    // background-color: #000;
-
+    z-index: 1;
 
     .tabs {
         width: 90%;
-        height: 10vh;
+        height: 8vh;
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin: auto;
         .tab {
             cursor: pointer;
-            color: white;
+            color: rgb(220, 220, 220);
             text-decoration: none;
             background: none;
             border: none;
@@ -137,7 +135,7 @@ header {
 #tab1 {
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 91vh;
     z-index: 11;
 
     @media screen and (max-width: 480px) {
@@ -215,20 +213,47 @@ header {
 #tab2 {
     position: absolute;
     width: 100%;
-    height: 100vh;
-    z-index: 10;
+    height: 91vh;
+    z-index: 1;
 
+    .pvw-svg {
+        color: #969696 !important;
+    }
 
-    .loop {
-        -webkit-overflow-scrolling: touch;
+    .more-items {
+        button {
+            background: none;
+            color: #5a5a5a;
+            text-transform: uppercase;
+            font-family: 'inter', sans-serif;
+            font-size: 15px;
+            border: none;
+            transition: color 0.3s ease-in-out;
+
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            svg {
+                transition: stroke 0.3s ease-in-out;
+            }
+
+            &:hover {
+                color: white;
+
+                svg {
+                    stroke: white;
+                }
+            }
+        }
     }
 }
 
 #tab3 {
     position: absolute;
     width: 100%;
-    height: 100vh;
-    z-index: 10;
+    height: 91vh;
+    z-index: 1;
 
     .info-wrapper::-webkit-scrollbar { display: none }
 
@@ -262,9 +287,9 @@ header {
             }
 
             &__title {
-                font-size: 17px;
+                font-size: 15px;
                 font-weight: 300;
-                color: rgb(200,200,200);
+                color: #969696;
                 margin: 0;
                 width: 15%;
 
@@ -324,8 +349,8 @@ header {
 
                         & span {
                             font-size: 13px;
-                            color: rgb(200,200,200);
-                            background-color: rgba(240, 240, 240, 0.22);
+                            color: #969696;
+                            background-color: rgba(150, 150, 150, 0.2);
                             padding: 6px;
                             border-radius: 8px;
                         }

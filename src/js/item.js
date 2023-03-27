@@ -1,24 +1,14 @@
 import { gsap } from 'gsap';
 
-/**
- * Class representing a Grid Item
- */
  export class Item {
-    // DOM elements
+
 	DOM = {
-		// main element (.item)
 		el: null,
-        // image element (.item__img)
         image: null,
-        // image inner element (.item__img-inner)
         imageInner: null,
-        // item link (.item__link)
         link: null,
-        // item meta (.item__meta)
         meta: null,
-        // item link (.item__title)
         title: null,
-        // item link (.item__desc)
         desc: null,
 	}
     

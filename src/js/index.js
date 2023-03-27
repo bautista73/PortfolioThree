@@ -35,7 +35,7 @@ tabs.forEach((tab) => {
         switch (target) {
           
           case 'tab1':
-            newPosition = { x: -4, y: 5, z: 15 };
+            newPosition = { x: -4, y: 5, z: 0 };
             meshPosition = { x: 0, y: 0, z: 0 };
             tabContents.forEach((tabContent) => {
               if (tabContent.id === target) {
@@ -52,8 +52,8 @@ tabs.forEach((tab) => {
             break;
 
           case 'tab2':
-            newPosition = { x: -2.8, y: -12, z: 8 };
-            meshPosition = { x: -1.5, y: 1, z: 0 };
+            newPosition = { x: -2.8, y: -12, z: 20 };
+            meshPosition = { x: -2, y: -2, z: 0 };
             tabContents.forEach((tabContent) => {
               if (tabContent.id === target) {
                 gsap.fromTo(
@@ -105,7 +105,7 @@ tabs.forEach((tab) => {
             z: newPosition.z,
             ease: 'power3.out',
         });
-      }, 500);
+      }, 600);
     }
   });
 });
@@ -115,20 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (defaultTab) {
     defaultTab.click();
   }
-})
-
-const links = document.querySelectorAll('.item__link');
-const metas = document.querySelectorAll('.item__meta');
-
-for (let i = 0; i < links.length; i++) {
-  links[i].addEventListener('mouseover', () => {
-    metas[i].classList.add('hovered');
-  });
-
-  links[i].addEventListener('mouseout', () => {
-    metas[i].classList.remove('hovered');
-  });
-}
-
+});
 
 
