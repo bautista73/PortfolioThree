@@ -131,19 +131,14 @@
 	align-items: flex-end;
 	height: 100%;
 	width: auto;
-	
-	color: rgb(70, 70, 70);
-	transition: color 0.3s ease-in-out;
-}
-
-.item:hover {
-	color: white;
 }
 
 .item__meta {
     font-weight: 300;
     font-size: 20px;
 	margin: 0;
+	color: rgb(70, 70, 70);
+	transition: color 0.3s ease-in-out;
 }
 
 .item__title {
@@ -179,12 +174,17 @@
 }
 
 .item__link {
-	position: absolute;
-	top: 0;
-	left: 0;
-	/* cursor: pointer; */
-	width: 100%;
-	height: 100%;
+	color: rgb(70, 70, 70);
+	transition: color 0.3s ease-in-out;
+}
+
+.item__link:hover {
+	color: white;
+}
+
+/* JS class to apply hover effect to meta when link is hovered */
+.hovered {
+	color: white;
 }
 
 /* .more-content {

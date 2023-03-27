@@ -210,7 +210,7 @@ export class Scene {
       1000
     );
     
-    this.camera.position.set(1, 1, 10);
+    this.camera.position.set(-10, -10, 25);
     this.camera.lookAt(0, 0, 0);
     
     
