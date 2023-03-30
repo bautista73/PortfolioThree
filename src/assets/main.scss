@@ -158,9 +158,8 @@ header {
 
       &__text {
         font-family: 'Inter', sans-serif;
-        font-size: clamp(2rem, 3.5vw, 5rem);
+        font-size: clamp(2rem, 5vw, 6rem);
         font-weight: 400;
-        line-height: 5.5rem;
         letter-spacing: -0.2rem;
         text-transform: capitalize;
         color: white;
@@ -174,17 +173,16 @@ header {
       }
   
       &__amp {
-        border: 4px solid white;
+        border: 3px solid white;
         border-radius: 50%;
-        height: clamp(1.5rem, 2vw, 3rem);
-        width: clamp(1.5rem, 2vw, 3rem);
-        min-height: clamp(1.5rem, 2vw, 3rem);
-        min-width: clamp(1.5rem, 2vw, 3rem);
+        height: clamp(1.8rem, 4vw, 6rem);
+        width: clamp(1.8rem, 4vw, 6rem);
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 1rem;
-        font-size: clamp(1.5rem, 2vw, 3rem);
+        padding-right: 0.2rem;
+        margin-right: 0.5rem;
+        font-size: clamp(1.4rem, 3vw, 6rem);
 
         @media screen and (max-width: 480px) {
             display: flex;
@@ -270,7 +268,7 @@ header {
         .info::-webkit-scrollbar { display: none }
         
         .info {
-            width: 60%;
+            width: 100%;
             height: 80%;
             display: flex;
             justify-content: flex-start;
@@ -287,7 +285,7 @@ header {
                 font-weight: 300;
                 color: #969696;
                 margin: 0;
-                width: 15%;
+                width: 12%;
 
                 @media screen and (max-width: 480px) {
                     display: none;

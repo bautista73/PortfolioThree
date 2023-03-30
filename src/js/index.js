@@ -52,8 +52,8 @@ tabs.forEach((tab) => {
             break;
 
           case 'tab2':
-            newPosition = { x: -2.8, y: -12, z: 20 };
-            meshPosition = { x: -3, y: -2, z: 0 };
+            newPosition = { x: -0.8, y: -12, z: 10 };
+            meshPosition = { x: -1.9, y: -1.3, z: 0 };
             tabContents.forEach((tabContent) => {
               if (tabContent.id === target) {
                 gsap.fromTo(
