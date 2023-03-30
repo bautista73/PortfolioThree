@@ -39,6 +39,12 @@
 	text-transform: capitalize;
 }
 
+@media screen and (max-width: 780px) {
+	.oh__cap br {
+		display: none;
+	}
+}
+
 .oh__wrapper {
 	display: flex;
 	justify-content: flex-end;
@@ -47,7 +53,7 @@
 
 .line {
 	transform-origin: 0 50%;
-	white-space: wrap;
+	/* white-space: wrap; */
 	will-change: transform;
 }
 
@@ -123,6 +129,12 @@
 	width: 60%;
 	margin: auto 5% auto auto;
 	overflow: auto;
+}
+
+@media screen and (max-width: 780px) {
+	.item-wrapper {
+		width: 90%;
+	}
 }
 
 .item-wrapper::-webkit-scrollbar { display: none; }
@@ -264,6 +276,7 @@
 	justify-content: space-between;
 	opacity: 1;
 	pointer-events: auto;
+	overflow: auto;
 }
 
 .preview__link {
@@ -284,6 +297,12 @@
 	position: relative;
 	height: 60vh;
 	overflow: hidden;
+}
+
+@media screen and (max-width: 780px) {
+	.preview__title-wrap {
+		height: auto;
+	}
 }
 
 .preview__img {
@@ -331,12 +350,26 @@
 	height: 20vh;
 }
 
+@media screen and (max-width: 780px) {
+	.preview__column-wrap {
+		height: auto;
+	}
+}
+
 .preview__column-wrap-inner {
 	width: 100%;
 	height: 100%;
 	display: flex;
 	justify-content: space-between;
 	padding: 10px;
+}
+
+@media screen and (max-width: 780px) {
+	.preview__column-wrap-inner {
+		flex-direction: column;
+		gap: 1rem;
+		padding: 0;
+	}
 }
 
 .preview__column p {
@@ -347,6 +380,14 @@
 	max-width: 650px;
 	margin: 0;
 	padding: 0;
+}
+
+@media screen and (max-width: 780px) {
+	.preview__column p {
+		width: fit-content;
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
 
 .preview__column > span {
@@ -360,6 +401,13 @@
 	font-size: 15px;
 	text-transform: capitalize;
 	color: #969696;
+}
+
+@media screen and (max-width: 780px) {
+	.preview__column-title--main {
+		display: flex;
+		justify-content: flex-end;
+	}
 }
 
 .preview__column-title-sub {
@@ -377,12 +425,22 @@
 	display: flex;
 	justify-content: space-between;
 }
+@media screen and (max-width: 780px) {
+	.preview__footer-wrap {
+		padding-top: 1rem;
+	}
+}
 
 .footer-oh-wrap {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	width: 12%;
+}
+@media screen and (max-width: 780px) {
+	.footer-oh-wrap {
+		width: fit-content;
+	}
 }
 
 .preview__back {
