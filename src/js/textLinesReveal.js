@@ -22,7 +22,11 @@ export class TextLinesReveal {
             el: DOM_el
         };
 
-        this.SplitTypeInstance = new SplitType(this.DOM.el, { types: 'lines' });
+        this.SplitTypeInstance = new SplitType(this.DOM.el, { 
+            types: 'lines',
+            lines: { block: 10 } // adjust the size of each block here
+          });
+          
         // Wrap the lines (div with class .oh)
         // The inner child will be the one animating the transform
         wrapLines(this.SplitTypeInstance.lines, 'div', 'oh');

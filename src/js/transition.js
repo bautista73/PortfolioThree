@@ -6,29 +6,32 @@ import { Preview } from './preview.js';
 
 const itemAll = document.querySelectorAll('.item');
 
-itemAll.forEach((item) => {
-  const imageWrap = item.querySelector('.item__image-wrap');
-  const image = item.querySelector('.item__image');
-  const title = item.querySelector('.item__title');
+if (window.innerWidth >= 781){
+    itemAll.forEach((item) => {
+      const imageWrap = item.querySelector('.item__image-wrap');
+      const image = item.querySelector('.item__image');
+      const title = item.querySelector('.item__title');
+    
+      item.addEventListener('mouseenter', () => {
+        gsap.killTweensOf(imageWrap);
+        gsap.killTweensOf(image);
+        gsap.to(imageWrap, { duration: 0.5, x: '0%', ease: 'power2.out' });
+        gsap.to(image, { duration: 0.5, visibility: 'visible' });
+        gsap.to(title, { duration: 0.5, marginLeft: '185px', ease: 'power2.out' });
+      });
+    
+      item.addEventListener('mouseleave', () => {
+        gsap.killTweensOf(imageWrap);
+        gsap.killTweensOf(image);
+        gsap.to(imageWrap, { duration: 0.5, x: '-100%', ease: 'power2.out' });
+        gsap.to(title, { duration: 0.5, marginLeft: '2px', ease: 'power2.out' });
+        gsap.to(image, { duration: 0.5, visibility: 'hidden', delay: 0.5, onComplete: () => {
+            gsap.set(image, { clearProps: 'visibility' });
+          }});
+      });
+    });
+}
 
-  item.addEventListener('mouseenter', () => {
-    gsap.killTweensOf(imageWrap);
-    gsap.killTweensOf(image);
-    gsap.to(imageWrap, { duration: 0.5, x: '0%', ease: 'power2.out' });
-    gsap.to(image, { duration: 0.5, visibility: 'visible' });
-    gsap.to(title, { duration: 0.5, marginLeft: '210px', ease: 'power2.out' });
-  });
-
-  item.addEventListener('mouseleave', () => {
-    gsap.killTweensOf(imageWrap);
-    gsap.killTweensOf(image);
-    gsap.to(imageWrap, { duration: 0.5, x: '-100%', ease: 'power2.out' });
-    gsap.to(title, { duration: 0.5, marginLeft: '2px', ease: 'power2.out' });
-    gsap.to(image, { duration: 0.5, visibility: 'hidden', delay: 0.5, onComplete: () => {
-        gsap.set(image, { clearProps: 'visibility' });
-      }});
-  });
-});
 
 
 // full screen transition
@@ -80,13 +83,13 @@ const openItem = item => {
     }, 'content')
     
     .add(() => {
-        for (const line of item.preview.multiLines) {
-            line.in();
-        }
-        gsap.set(item.preview.DOM.multiLineWrap, {
-            opacity: 1,
-            delay:0.1
-        })
+        // for (const line of item.preview.multiLines) {
+        //     line.in();
+        // }
+        // gsap.set(item.preview.DOM.multiLineWrap, {
+        //     opacity: 1,
+        //     delay:0.1
+        // })
     }, 'content')
     // animate frame element
     .to(frameEl, {
@@ -117,13 +120,13 @@ const closeItem = item => {
     })
     .addLabel('start', 0)
     .to(item.preview.DOM.innerElements, {
-        yPercent: -101,
+        yPercent: -30,
         opacity: 0,
     }, 'start')
     .add(() => {
-        for (const line of item.preview.multiLines) {
-            line.out();
-        }
+        // for (const line of item.preview.multiLines) {
+        //     line.out();
+        // }
     }, 'start')
     
     .to(item.preview.DOM.backCtrl, {
