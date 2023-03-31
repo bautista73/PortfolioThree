@@ -51,6 +51,14 @@ body {
     }
 }
 
+canvas#noise {
+    position: absolute;
+	opacity: 0.02; 
+	z-index: 9999;
+	pointer-events: none;
+	user-select: none;
+}
+
 canvas#webgl {
     position: absolute;
     z-index: 1;

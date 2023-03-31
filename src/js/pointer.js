@@ -8,7 +8,7 @@ function isTouchDevice() {
   return 'ontouchstart' in window || navigator.maxTouchPoints;
 }
 if (!isTouchDevice()) {
-  // Listeners
+  
   document.addEventListener('mousemove', onMouseMove);
 
   for (let i = 0; i < hoverables.length; i++) {
@@ -16,7 +16,6 @@ if (!isTouchDevice()) {
     hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
   }
 
-  // Move the cursor
   function onMouseMove(e) {
     gsap.to(bigBall, {
       duration: 0.3,
@@ -32,7 +31,6 @@ if (!isTouchDevice()) {
     });
   }
 
-  // Hover an element
   function onMouseHover() {
     gsap.to(bigBall, {
       duration: 0.3,
@@ -49,7 +47,7 @@ if (!isTouchDevice()) {
     });
   }
 } else {
-  // Remove the custom cursor event listeners
+
   document.removeEventListener('mousemove', onMouseMove);
 
   for (let i = 0; i < hoverables.length; i++) {
