@@ -79,7 +79,7 @@ canvas#webgl {
     max-height: 80%;
     opacity: 0.6;
 
-    @media screen and (max-width: 780px) {
+    @media screen and (max-width: 880px) {
         max-height: 100%;
         max-width: 100%;
         margin: 0;
@@ -325,14 +325,14 @@ header {
                 width: 100%;
 
                 .p-wrapper {
-                    width: 80%;
+                    width: 70%;
                     display: flex;
                     flex-direction: column;
                     gap: 1rem;
                     line-height: 1.5rem;
                     font-size: 15px;
 
-                    @media screen and (max-width: 480px) {
+                    @media screen and (max-width: 880px) {
                         width: 95%;
                     }
 
