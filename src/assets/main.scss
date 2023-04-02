@@ -51,12 +51,20 @@ body {
     }
 }
 
-canvas#noise {
+.container {
     position: absolute;
-	opacity: 0.02; 
-	z-index: 9999;
-	pointer-events: none;
-	user-select: none;
+    z-index: 99999;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    
+    #noise {
+      width: 100vw;
+      height: 100vh;
+    }
 }
 
 canvas#webgl {

@@ -204,7 +204,7 @@ export class Scene {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     
     this.camera = new THREE.PerspectiveCamera(
-      8,
+      10,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
@@ -234,7 +234,7 @@ export class Scene {
   }  
   
   addElements() {
-    const geometry = new THREE.DodecahedronGeometry(1, 60);
+    const geometry = new THREE.DodecahedronGeometry(1, 50);
     const material = new THREE.ShaderMaterial({
       vertexShader,
       fragmentShader,
