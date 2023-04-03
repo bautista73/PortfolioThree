@@ -291,7 +291,6 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	opacity: 1;
 	pointer-events: auto;
 	overflow: auto;
@@ -313,7 +312,7 @@
 
 .preview__title-wrap {
 	position: relative;
-	height: 60vh;
+	height: auto;
 	overflow: hidden;
 }
 
