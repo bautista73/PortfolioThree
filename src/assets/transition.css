@@ -216,6 +216,10 @@
 	transition: color 0.3s ease-in-out;
 }
 
+.item__black {
+	color: black !important;
+}
+
 .item__svg {
 	margin-top: 0.5%;
 	transition: stroke 0.3s ease-in-out;
