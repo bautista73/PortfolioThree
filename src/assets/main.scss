@@ -32,7 +32,7 @@ body {
     position: relative;
     margin: auto;
     padding: 0;
-    width: 100%;
+    max-width: 1920px;
     height: 100vh;
     background-color: rgb(20, 20, 20);
     font-family: 'Inter', sans-serif;
@@ -48,22 +48,6 @@ body {
 
     @media screen and (max-width: 480px) {
         font-size: 14px;
-    }
-}
-
-.container {
-    position: absolute;
-    z-index: 99999;
-    pointer-events: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    
-    #noise {
-      width: 100%;
-      height: 100%;
     }
 }
 
@@ -160,11 +144,7 @@ header {
   
 #tab1 {
     position: absolute;
-    left: 0;
-    right: 0;
     width: 100%;
-    max-width: 1920px;
-    margin: auto;
     height: 91vh;
     z-index: 11;
 
@@ -240,11 +220,7 @@ header {
 
 #tab2 {
     position: absolute;
-    left: 0;
-    right: 0;
     width: 100%;
-    max-width: 1920px;
-    margin: auto;
     height: 91vh;
     z-index: 1;
 
@@ -417,23 +393,32 @@ header {
                     }
     
                     &__button {
-                        background: none;
                         color: white;
                         font-size: 15px;
+                        background: transparent;
+                        color: white;
+                        font-size: 15px;
+                        border: 1px solid white;
+                        border-radius: 18px;
+                        padding: 8px 10px;
                         // pointer-events: auto;
-                        // cursor: pointer;
-                        border: none;
-                        border-bottom: 1px solid white;
-                        width: fit-content;
-                        padding: 0;
-                        margin: 0;
+                        // cursor: pointer; 
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+
+                        &:hover {
+                            color: rgb(20, 20, 20);
+                            background: white;
+                        }
                     }
     
                     &__socials {
                         display: flex;
                         gap: 1rem;
-                        
-    
+
                         button {
                             background: none;
                             color: white;
@@ -441,11 +426,17 @@ header {
                             // pointer-events: auto;
                             // cursor: pointer;
                             border: none;
-                            border-bottom: 1px solid white;
+                            border-bottom: 1px solid transparent;
                             padding: 0;
     
                             display: flex;
                             align-items: center;
+
+                            transition: border-bottom 0.3s ease-in-out;
+
+                            &:hover {
+                                border-bottom: 1px solid white;
+                            }
                         }
                     }
                 }
