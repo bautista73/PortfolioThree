@@ -41,6 +41,12 @@
 	max-width: 500px;
 }
 
+@media screen and (min-width: 2000px) {
+	.inner__sub {
+		font-size: 20px;
+	}
+}
+
 .oh__cap {
 	text-transform: capitalize;
 }
@@ -196,6 +202,12 @@
 	overflow: hidden;
 }
 
+@media screen and (min-width: 2000px) {
+	.item {
+		height: 10%;
+	}
+}
+
 .item:hover {
 	stroke: white;
 	color: white;
@@ -209,9 +221,15 @@
 	width: 20%;
 }
 
+@media screen and (min-width: 2000px) {
+	.item__meta {
+		font-size: 22px;
+	}
+}
+
 .item__title {
 	font-weight: 400;
-	font-size: clamp(1.8rem, 3.5vw, 4rem);
+	font-size: clamp(1.8rem, 3vw, 3.2rem);
 	letter-spacing: -3px;
 	margin: 0;
 	padding: 0;
@@ -228,13 +246,6 @@
 	transition: stroke 0.3s ease-in-out;
 	width: auto;
 }
-
-/* .item__desc {
-	margin: 1rem 0 0 0;
-	font-size: 15px;
-	line-height: 1.5;
-	padding: 0;
-} */
 
 .item__link {
 	width: 100%;
@@ -279,6 +290,7 @@
 	pointer-events: none;
 	height: auto;
 }
+.previews::-webkit-scrollbar { display: none }
 
 .preview {	opacity: 0;
 	pointer-events: none;
@@ -293,6 +305,8 @@
 	overflow: hidden;
 }
 
+.preview::-webkit-scrollbar { display: none }
+
 .preview--current {
 	position: relative;
 	display: flex;
@@ -302,12 +316,20 @@
 	overflow: auto;
 }
 
+.preview--current::-webkit-scrollbar { display: none }
+
 .preview__link {
 	display: flex;
 	font-size: 15px;
 	color: #969696;
 	stroke: #969696;
 	text-decoration: none;
+}
+
+@media screen and (min-width: 2000px) {
+	.preview__link {
+		font-size: 22px;
+	}
 }
 
 .preview__link:hover {
@@ -371,7 +393,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	height: 20vh;
+	height: auto;
 	margin-top: 1rem;
 }
 
@@ -409,6 +431,11 @@
 	text-transform: capitalize;
 	color: #969696;
 }
+@media screen and (min-width: 2000px) {
+	.preview__column-title  {
+		font-size: 22px;
+	}
+}
 
 @media screen and (max-width: 880px) {
 	.preview__column-title--main {
@@ -419,6 +446,12 @@
 
 .preview__column-title-sub {
 	font-size: 13px;
+}
+
+@media screen and (min-width: 2000px) {
+	.preview__column-title-sub {
+		font-size: 17px;
+	}
 }
 
 .preview__column {
@@ -437,6 +470,7 @@
 @media screen and (max-width: 1280px){
 	.preview__footer-wrap {
 		padding-top: 1rem;
+		margin-bottom: 2rem;
 	}
 }
 
