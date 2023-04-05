@@ -21,7 +21,7 @@ import { gsap } from 'gsap';
 		this.DOM.el = DOM_el;
         this.preview = previewEl;
         this.DOM.image = this.DOM.el.querySelector('.item__img');
-        this.DOM.imageInner = this.DOM.el.querySelector('.item__img-inner');
+        this.DOM.imageInner = this.DOM.el.querySelector('.item_git _img-inner');
         this.DOM.link = this.DOM.el.querySelector('.item__link');
         this.DOM.meta = this.DOM.el.querySelector('.item__meta');
         this.DOM.title = this.DOM.el.querySelector('.item__title');

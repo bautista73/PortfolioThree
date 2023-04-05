@@ -401,6 +401,7 @@ header {
                         border: 1px solid white;
                         border-radius: 18px;
                         padding: 8px 10px;
+                        text-decoration: none;
                         // pointer-events: auto;
                         // cursor: pointer; 
                         display: flex;
@@ -419,10 +420,11 @@ header {
                         display: flex;
                         gap: 1rem;
 
-                        button {
+                        a {
                             background: none;
                             color: white;
                             font-size: 15px;
+                            text-decoration: none;
                             // pointer-events: auto;
                             // cursor: pointer;
                             border: none;
