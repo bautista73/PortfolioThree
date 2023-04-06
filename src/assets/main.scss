@@ -3,25 +3,6 @@
 
 @import url('./transition.css');
 
-$gray: rgb(200,200,200); 
-
-:root {
-	font-size: 17px;
-	font-weight: 300;
-	--color-text: #000;
-	--color-text-alt: #fff;
-	--color-frame-alt: #a17445;
-	--color-bg: #c6c1b7;
-	--color-bg-alt: #18130e;
-	--color-link: #000;
-	--color-link-alt: #fff;
-	--color-link-hover: #000;
-	--color-link-hover-alt: #a17445;
-	--color-column-title: #727170;
-	--color-overlay: #000;
-	--color-border: #a0988a;
-}
-
 *,
 *::after,
 *::before {
@@ -63,7 +44,7 @@ canvas#webgl {
     max-height: 80%;
     opacity: 0.6;
 
-    @media screen and (max-width: 880px) {
+    @media screen and (max-width: 900px) {
         max-height: 100%;
         max-width: 100%;
         margin: 0;
@@ -105,22 +86,22 @@ header {
         align-items: center;
         justify-content: space-between;
         margin: auto;
+
         .tab {
             cursor: pointer;
-            color: rgb(220, 220, 220);
+            color: #eee;
             text-decoration: none;
             background: none;
             border: none;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 300;
-            text-transform: capitalize;
-            border-bottom: 1px solid transparent;
-            transition: border-bottom 0.2s ease-in-out, color 0.3s ease-in-out;
+            text-transform: uppercase;
+            transition: color 0.3s ease-in-out;
             padding: 0;
             cursor: pointer;
 
-            @media screen and (max-width: 820px) {
-                font-size: 14px;
+            @media screen and (max-width: 450px) {
+                font-size: 12px;
             }
 
             @media screen and (min-width: 2000px) {
@@ -129,8 +110,12 @@ header {
 
             &:hover {
                 color: white;
-                border-bottom: 1px solid white;
             }
+        }
+
+        .tab-spacer {
+            color: #969696;
+            font-size: 15px;
         }
     }
     
@@ -273,7 +258,7 @@ header {
         display: flex;
         align-items: center;
 
-        @media screen and (max-width: 780px) {
+        @media screen and (max-width: 980px) {
             padding-top: 1rem;
             overflow: auto;
             align-items: flex-start;
@@ -284,21 +269,17 @@ header {
         
         .info {
             width: 100%;
-            height: 80%;
+            height: 90%;
             display: flex;
-            justify-content: flex-start;
             flex-direction: column;
-            gap: 2rem;
+            justify-content: flex-start;
+            gap: 1rem;
             overflow: auto;
-
-            @media screen and (max-width: 780px) {
-                height: 90%;
-            }
 
             &__title {
                 font-size: 15px;
                 font-weight: 300;
-                color: #969696;
+                color: #eee;
                 margin: 0;
                 width: 12%;
 
@@ -317,12 +298,13 @@ header {
                 width: 100%;
 
                 .p-wrapper {
-                    width: 70%;
+                    width: 60%;
                     display: flex;
                     flex-direction: column;
                     gap: 1rem;
                     line-height: 1.5rem;
                     font-size: 15px;
+                    color: #bbb;
 
                     @media screen and (max-width: 880px) {
                         width: 95%;
@@ -348,7 +330,12 @@ header {
                     gap: 1rem;
                     width: 80%;
 
+                    @media screen and (max-width: 880px) {
+                        width: 95%;
+                    }
+
                     &__sub {
+                        color: #bbb;
                         font-size: 15px;
                         font-weight: 300;
                         margin: 0;
@@ -364,13 +351,14 @@ header {
 
                     &__row {
                         display: flex;
+                        align-items: center;
                         flex-wrap: wrap;
                         gap: 0.4rem;
 
                         & span {
                             font-size: 13px;
-                            color: #969696;
-                            background-color: rgba(150, 150, 150, 0.2);
+                            color: #bbb;
+                            background-color: rgba(187, 187, 187, 0.09); 
                             padding: 6px;
                             border-radius: 8px;
 
@@ -385,6 +373,7 @@ header {
                 display: flex;
                 align-items: flex-start;
                 width: 100%;
+                padding-top: 1.5rem;
 
                 @media screen and (max-width: 480px) {
                     padding-bottom: 4rem;
@@ -395,19 +384,19 @@ header {
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: flex-start;
-                    gap: 1.5rem;
+                    gap: 0.8rem;
                     width: 80%;
                     
                     &__email {
                         display: flex;
                         align-items: center;
                         
-                        
                         &__sub {
                             font-size: 15px;
                             font-weight: 400;
                             margin: 0;
                             width: 100%;
+                            color: #eee;
 
                             @media screen and (min-width: 2000px) {
                                 font-size: 22px;
@@ -446,26 +435,59 @@ header {
     
                     &__socials {
                         display: flex;
-                        gap: 1rem;
+                        gap: 0.5rem;
 
                         a {
                             background: none;
-                            color: white;
-                            font-size: 15px;
+                            color: #eee;
+                            background-color: rgba($color: #2f2f2f, $alpha: 0.3);
+                            font-size: 14px;
+                            font-weight: 400;
                             text-decoration: none;
                             // pointer-events: auto;
                             // cursor: pointer;
-                            border: none;
-                            border-bottom: 1px solid transparent;
-                            padding: 0;
+                            border: 1px solid #393939;
+                            border-radius: 10px;
+                            padding: 10px 14px;
     
                             display: flex;
                             align-items: center;
 
-                            transition: border-bottom 0.3s ease-in-out;
+                            transition: border 0.3s ease-in-out;
 
                             &:hover {
-                                border-bottom: 1px solid white;
+                                border: 1px solid #7f7f7f;
+                            }
+
+                            @media screen and (min-width: 2000px) {
+                                font-size: 22px;
+                            }
+                        }
+                    }
+                    &__links {
+                        display: flex;
+                        gap: 0.5rem;
+
+                        a {
+                            background: none;
+                            color: #eee;
+                            font-size: 14px;
+                            font-weight: 400;
+                            text-decoration: none;
+                            // pointer-events: auto;
+                            // cursor: pointer;
+                            border: 1px solid #393939;
+                            border-radius: 10px;
+                            padding: 10px 14px;
+    
+                            display: flex;
+                            align-items: center;
+
+                            transition: border 0.3s ease-in-out, color 0.3s ease-in-out;
+
+                            &:hover {
+                                color: #ccc;
+                                border: 1px solid #7f7f7f;
                             }
 
                             @media screen and (min-width: 2000px) {
@@ -475,7 +497,6 @@ header {
                     }
                 }
             }
-        }
-        
+        } 
     }
 }
