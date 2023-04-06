@@ -9,13 +9,15 @@
 
 body {
     position: relative;
+    height: auto;
     max-width: 1000px;
     margin: auto;
-    padding: 20px 15px;
-    height: 100vh;
+    padding: 30px 30px;
     background-color: rgb(20, 20, 20);
     font-family: 'Inter', sans-serif;
     color: #eee;
+
+    &::-webkit-scrollbar { display: none }
 }
 
 hr {
@@ -105,6 +107,14 @@ header {
                 color: #ccc;
                 width: fit-content;
             }
+
+            .time-place {
+                font-size: 13px;
+                font-weight: 300;
+                text-decoration: none;
+                color: #ccc;
+                width: fit-content;
+            }
         }
 
         &-info {
@@ -128,6 +138,82 @@ header {
                         font-weight: 300;
                         color: #ccc;
                     }
+                }
+            }
+        }
+    }
+}
+
+#experience {
+    @extend #projects;
+}
+
+#education {
+    @extend #projects;
+
+    .edu-wrap {
+        display: flex;
+        gap: 50px;
+
+        h3 {
+            color: #eee;
+            margin-bottom: 10px;
+        }
+
+        .edu-title {
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+            gap: 4px;
+
+            .time-place-name {
+                font-size: 13px;
+                font-weight: 400;
+                text-decoration: none;
+                color: #eee;
+                width: fit-content;
+            }
+            
+            .time-place {
+                font-size: 13px;
+                font-weight: 300;
+                text-decoration: none;
+                color: #ccc;
+                width: fit-content;
+            }
+        }
+    }
+}
+
+#skills {
+    margin-bottom: 15px;
+
+    @extend #education;
+
+    .skills-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .skills {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            
+            .time-place-name {
+                color: #eee;
+                font-size: 13px;
+                font-weight: 400;
+            }
+
+            .skills-sub {
+                display: flex;
+                gap: 10px;
+                font-size: 13px;
+                font-weight: 300;
+    
+                .time-place {
+                    color: #ccc;
                 }
             }
         }
