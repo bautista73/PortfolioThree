@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+$font-xsmall: clamp(12px, 1.5vw, 14px);
+$font-small: clamp(14px, 1.5vw, 16px);
+$font-medium: clamp(16px, 2.0vw, 18px);
+$font-large: clamp(25px, 2.5vw, 30px);
+
 *,
 *::before,
 *::after {
@@ -20,49 +25,76 @@ body {
     &::-webkit-scrollbar { display: none }
 }
 
-hr {
+#main {
     width: 100%;
-    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#left {
+    width: 65%;
+}
+
+#right {
+    width: 30%;
+}
+
+.hr {
+    width: 100%;
     border: 1px solid #252525;
-    margin: 20px 0;
+    margin: 15px 0;
+}
+
+.time-place-name {
+    color: #eee;
+    font-size: $font-xsmall;
+    font-weight: 400;
 }
 
 h3 {
-    font-size:18px;
+    font-size: $font-small;
     font-weight: 300;
-    color: #aaa;
+    color: #bbb;
 }
 
 header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     margin: auto;
-    gap: 20px;
-    margin-bottom: 15px;
+    gap: 10px;
 
     h1 { 
-        font-size: 35px;
-        font-weight: 500;
+        font-size: $font-large;
+        font-weight: 400;
         color: #eee;
+        margin-left: -1px;
+    }
+
+    h2 {
+        font-size: $font-medium;
+        font-weight: 300;
+        color: #ccc;
     }
     .links {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        max-width: 1000px;
+        flex-direction: column;
+        gap: 5px;
+        // align-items: center;
+        // justify-content: space-between;
+        // width: 100%;
 
         a {
             display: flex;
             align-items: center;
-            gap: 3px;
+            gap: 5px;
             text-decoration: none;
-            font-size: 14px;
+            font-size: $font-xsmall;
             font-weight: 300;
             color: #ccc;
 
             i {
-                font-size: 18px;
+                font-size: $font-xsmall;
                 color: #ccc;
             }
         }
@@ -73,35 +105,34 @@ header {
     width: 100%;
 
     h3 {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     .project-wrap {
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 35px;
+        gap: 30px;
     }
     
     .project {
         width: 100%;
         display: flex;
-        align-items: flex-start;
 
         &-title {
             display: flex;
             flex-direction: column;
-            gap: 4px;
-            width: 9rem;
-            min-width: 9rem;
+            gap: 5px;
+            width: 35%;
 
             h3 {
+                font-size: $font-small;
                 color: #eee;
                 margin-bottom: 10px;
             }
 
             .link {
-                font-size: 14px;
+                font-size: $font-xsmall;
                 font-weight: 300;
                 text-decoration: none;
                 color: #ccc;
@@ -109,7 +140,7 @@ header {
             }
 
             .time-place {
-                font-size: 13px;
+                font-size: $font-xsmall;
                 font-weight: 300;
                 text-decoration: none;
                 color: #ccc;
@@ -118,6 +149,7 @@ header {
         }
 
         &-info {
+
             ul {
                 display: flex;
                 flex-direction: column;
@@ -129,12 +161,12 @@ header {
                     
                     svg {
                         min-width: 5px;
-                        margin-top: 8px;
+                        margin-top: 6px;
                         margin-right: 5px;
                     }
 
                     li {
-                        font-size: 14px;
+                        font-size: $font-xsmall;
                         font-weight: 300;
                         color: #ccc;
                     }
@@ -153,7 +185,8 @@ header {
 
     .edu-wrap {
         display: flex;
-        gap: 50px;
+        flex-direction: column;
+        gap: 15px;
 
         h3 {
             color: #eee;
@@ -163,19 +196,25 @@ header {
         .edu-title {
             display: flex;
             flex-direction: column;
-            width: fit-content;
-            gap: 4px;
+            gap: 5px;
 
             .time-place-name {
-                font-size: 13px;
+                font-size: $font-xsmall;
                 font-weight: 400;
                 text-decoration: none;
                 color: #eee;
                 width: fit-content;
+
+                &-alt {
+                    font-size: $font-xsmall;
+                    font-weight: 300;
+                    text-decoration: none;
+                    color: #aaa;
+                }
             }
             
             .time-place {
-                font-size: 13px;
+                font-size: $font-xsmall;
                 font-weight: 300;
                 text-decoration: none;
                 color: #ccc;
@@ -186,8 +225,6 @@ header {
 }
 
 #skills {
-    margin-bottom: 15px;
-
     @extend #education;
 
     .skills-wrap {
@@ -198,21 +235,23 @@ header {
         .skills {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 5px;
             
             .time-place-name {
                 color: #eee;
-                font-size: 13px;
+                font-size: $font-xsmall;
                 font-weight: 400;
             }
 
             .skills-sub {
                 display: flex;
-                gap: 10px;
-                font-size: 13px;
+                flex-wrap: wrap;
+                gap: 5px;
+                font-size: $font-xsmall;
                 font-weight: 300;
     
                 .time-place {
+                    font-size: $font-xsmall;
                     color: #ccc;
                 }
             }
