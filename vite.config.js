@@ -4,7 +4,7 @@ import sass from 'sass';
 const isCodeSandbox = 'SANDBOX_URL' in process.env || 'CODESANDBOX_HOST' in process.env
 
 export default defineConfig({
-  root: 'src/',
+  root: './',
   publicDir: '../static/',
   base: './',
   server: {
@@ -16,6 +16,11 @@ export default defineConfig({
     emptyOutDir: true,
     sourcemap: true,
     pages: [
+      {
+        path: '/',
+        title: 'Brandon Bautista',
+        file: 'index.html'
+      },
       {
         path: '/resume',
         title: 'Resume',
