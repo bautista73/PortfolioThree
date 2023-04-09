@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  height: auto;
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px 30px;
+  background-color: rgb(20, 20, 20);
+  font-family: "Inter", sans-serif;
+  color: #eee;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+#main {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#left {
+  width: 65%;
+}
+
+#right {
+  width: 30%;
+}
+
+.hr {
+  width: 100%;
+  border: 1px solid #252525;
+  margin: 15px 0;
+}
+
+.time-place-name {
+  color: #eee;
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 400;
+}
+
+h3 {
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 300;
+  color: #bbb;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+  gap: 10px;
+}
+header h1 {
+  font-size: clamp(25px, 2.5vw, 30px);
+  font-weight: 400;
+  color: #eee;
+  margin-left: -1px;
+}
+header h2 {
+  font-size: clamp(16px, 2vw, 18px);
+  font-weight: 300;
+  color: #ccc;
+}
+header .links {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+header .links a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 300;
+  color: #ccc;
+}
+header .links a i {
+  font-size: clamp(12px, 1.5vw, 14px);
+  color: #ccc;
+}
+
+#projects, #education, #skills, #experience {
+  width: 100%;
+}
+#projects h3, #education h3, #skills h3, #experience h3 {
+  margin-bottom: 15px;
+}
+#projects .project-wrap, #education .project-wrap, #skills .project-wrap, #experience .project-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#projects .project, #education .project, #skills .project, #experience .project {
+  width: 100%;
+  display: flex;
+}
+#projects .project-title, #education .project-title, #skills .project-title, #experience .project-title {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 35%;
+}
+#projects .project-title h3, #education .project-title h3, #skills .project-title h3, #experience .project-title h3 {
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: #eee;
+  margin-bottom: 10px;
+}
+#projects .project-title .link, #education .project-title .link, #skills .project-title .link, #experience .project-title .link {
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 300;
+  text-decoration: none;
+  color: #ccc;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#projects .project-title .time-place, #education .project-title .time-place, #skills .project-title .time-place, #experience .project-title .time-place {
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 300;
+  text-decoration: none;
+  color: #ccc;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#projects .project-info ul, #education .project-info ul, #skills .project-info ul, #experience .project-info ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+#projects .project-info ul .li-wrap, #education .project-info ul .li-wrap, #skills .project-info ul .li-wrap, #experience .project-info ul .li-wrap {
+  display: flex;
+}
+#projects .project-info ul .li-wrap svg, #education .project-info ul .li-wrap svg, #skills .project-info ul .li-wrap svg, #experience .project-info ul .li-wrap svg {
+  min-width: 5px;
+  margin-top: 6px;
+  margin-right: 5px;
+}
+#projects .project-info ul .li-wrap li, #education .project-info ul .li-wrap li, #skills .project-info ul .li-wrap li, #experience .project-info ul .li-wrap li {
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 300;
+  color: #ccc;
+}
+
+#education .edu-wrap, #skills .edu-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#education .edu-wrap h3, #skills .edu-wrap h3 {
+  color: #eee;
+  margin-bottom: 10px;
+}
+#education .edu-wrap .edu-title, #skills .edu-wrap .edu-title {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#education .edu-wrap .edu-title .time-place-name, #skills .edu-wrap .edu-title .time-place-name {
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 400;
+  text-decoration: none;
+  color: #eee;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#education .edu-wrap .edu-title .time-place-name-alt, #skills .edu-wrap .edu-title .time-place-name-alt {
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 300;
+  text-decoration: none;
+  color: #aaa;
+}
+#education .edu-wrap .edu-title .time-place, #skills .edu-wrap .edu-title .time-place {
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 300;
+  text-decoration: none;
+  color: #ccc;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#skills .skills-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#skills .skills-wrap .skills {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#skills .skills-wrap .skills .time-place-name {
+  color: #eee;
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 400;
+}
+#skills .skills-wrap .skills .skills-sub {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 300;
+}
+#skills .skills-wrap .skills .skills-sub .time-place {
+  font-size: clamp(12px, 1.5vw, 14px);
+  color: #ccc;
+}/*# sourceMappingURL=resume.css.map */
