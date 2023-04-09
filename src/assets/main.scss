@@ -149,13 +149,13 @@ header {
       margin: auto;
       padding: 0.5rem;
 
-      @media screen and (max-width: 480px) {
-
-      }
+      @media screen and (max-width: 760px) {
+        height: 100%;
+    }
 
       &__text {
         font-family: 'Inter', sans-serif;
-        font-size: clamp(2rem, 5vw, 6rem);
+        font-size: clamp(2.2rem, 4.5vw, 5.5rem);
         font-weight: 400;
         letter-spacing: -0.2rem;
         text-transform: capitalize;

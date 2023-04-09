@@ -10,22 +10,6 @@ export let settings = {
   intensity: 2.8,
 };
 
-//Main
-// speed: 0.02,
-// density: 1.5,
-// strength: 0.2,
-// frequency: 3.0,
-// amplitude: 6.0,
-// intensity: 6.0,
-
-//Default Settings
-// speed: 0.2,
-// density: 1.5,
-// strength: 0.2,
-// frequency: 3.0,
-// amplitude: 6.0,
-// intensity: 7.0,
-
 const noise = `
   vec3 mod289(vec3 x)
   {
@@ -234,10 +218,8 @@ export class Scene {
   }  
   
   addElements() {
-    const geometry = new THREE.DodecahedronGeometry(1, 50);
+    const geometry = new THREE.IcosahedronGeometry(1, 50);
     const material = new THREE.ShaderMaterial({
-      vertexShader,
-      fragmentShader,
       uniforms: {
         uTime: { value: 0 },
         uSpeed: { value: settings.speed },
@@ -247,7 +229,8 @@ export class Scene {
         uAmplitude: { value: settings.amplitude },
         uIntensity: { value: settings.intensity },
       },
-      // wireframe: true,
+      vertexShader,
+      fragmentShader,
     });
     this.mesh = new THREE.Mesh(geometry, material);
     this.mesh.position.set(0, 0, 0);
@@ -296,7 +279,6 @@ export class Scene {
   render() {
     this.controls.update();
     
-    // Update uniforms
     this.mesh.material.uniforms.uTime.value = this.clock.getElapsedTime();
     this.mesh.material.uniforms.uSpeed.value = settings.speed;    
     this.mesh.material.uniforms.uNoiseDensity.value
@@ -309,5 +291,3 @@ export class Scene {
     this.renderer.render(this.scene, this.camera);
   }  
 }
-
-new Scene();
