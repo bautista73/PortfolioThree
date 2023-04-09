@@ -149,9 +149,9 @@ header {
       margin: auto;
       padding: 0.5rem;
 
-      @media screen and (max-width: 760px) {
-        height: 100%;
-    }
+      @media screen and (max-width: 900px) {
+        height: 75%;
+      }
 
       &__text {
         font-family: 'Inter', sans-serif;
@@ -161,7 +161,7 @@ header {
         text-transform: capitalize;
         color: white;
         opacity: 1;
-        
+
         @media screen and (max-width: 480px) {
             font-size: 2rem;
             line-height: 2.1rem;
