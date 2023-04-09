@@ -15,18 +15,6 @@ export default defineConfig({
     outDir: '../dist',
     emptyOutDir: true,
     sourcemap: true,
-    pages: [
-      {
-        path: '/',
-        title: 'Brandon Bautista',
-        file: 'index.html'
-      },
-      {
-        path: '/resume',
-        title: 'Resume',
-        file: 'resume.html'
-      }
-    ]
   },
   plugins: [
     {
