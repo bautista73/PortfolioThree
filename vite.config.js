@@ -19,7 +19,7 @@ export default defineConfig({
       {
         path: '/resume',
         title: 'Resume',
-        file: 'pages/resume.html'
+        file: 'resume.html'
       }
     ]
   },
