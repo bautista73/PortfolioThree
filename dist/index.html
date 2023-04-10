@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandon Bautista</title>
+    <style lang="scss"></style>
+    
+    
+  <script type="module" crossorigin src="./assets/index-df0a12e1.js"></script>
+  <link rel="stylesheet" href="./assets/index-78a3d5e2.css">
+</head>
+<body>
+    <canvas id="webgl"></canvas>
+    <div class="cursor">
+        <div class="cursor__ball cursor__ball--big ">
+            <svg height="30" width="30">
+                <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+            </svg>
+        </div>
+        <div class="cursor__ball cursor__ball--small">
+            <svg height="10" width="10">
+                <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+            </svg>
+        </div>
+    </div>
+    <header>
+        <nav class="tabs">
+            <button class="tab active hoverable" data-target="tab1" data-default>Brandon Bautista</button>
+            <div class="button-wrapper">
+                <button class="tab hoverable" data-target="tab2">Selected Works</button>
+                <span class="tab-spacer">/</span>
+                <button class="tab hoverable" data-target="tab3">About</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <section id="tab1" class="tab-content active">
+            <div class="title">
+                <span class="title__text">Interactive Developer</span>
+                <div class="text-wrap">
+                    <div class="title__amp">&</div><Experience class="title__text">Experience Designer</span>
+                </div>
+            </div>  
+        </section>
+
+        <section id="tab2" class="tab-content">
+            <div class="main-wrap">
+                <div class="content">
+                    <div class="item-wrapper">
+                        <hr class="item-line">
+                        <div class="item">
+                            <a class="item__link">
+                                <div class="item__image-wrap">
+                                    <img class="item__image" src='data:image/png;base64,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'>
+                                </div>
+                                <h2 class="item__title hoverable">Elmer's Express</h2>
+                                <span class="item__meta">Web Development<br>/2023</span>
+                                <svg class="item__svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="arcs"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                            </a>
+                        </div>
+                        <hr class="item-line">
+                        <div class="item">
+                            <a class="item__link">
+                                <div class="item__image-wrap">
+                                    <img class="item__image" src='./assets/2-309165bf.png'>
+                                </div>
+                                <h2 class="item__title hoverable">NexusMD</h2>
+                                <span class="item__meta">Application<br>/2023</span>
+                                <svg class="item__svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="arcs"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                            </a>
+                        </div>
+                        <hr class="item-line">
+                        <div class="item">
+                            <a class="item__link">
+                                <div class="item__image-wrap">
+                                    <img class="item__image" src='./assets/3-244791e0.png'>
+                                </div>
+                                <h2 class="item__title hoverable">MarbleFlow</h2>
+                                <span class="item__meta">Application<br>/2023</span>
+                                <svg class="item__svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="arcs"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                            </a>
+                        </div>
+                        <hr class="item-line">
+                        <div class="item">
+                            <a class="item__link">
+                                <div class="item__image-wrap">
+                                    <img class="item__image" src='data:image/png;base64,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'>
+                                </div>
+                                <h2 class="item__title hoverable">Desk & Club</h2>
+                                <span class="item__meta">Web Development<br>/2023</span>
+                                <svg class="item__svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="arcs"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                            </a>
+                        </div>
+                        <hr class="item-line">
+                        <div class="item">
+                            <a class="item__link">
+                                <div class="item__image-wrap">
+                                    <img class="item__image" src='data:image/png;base64,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'>
+                                </div>
+                                <h2 class="item__title hoverable">Liftify</h2>
+                                <span class="item__meta">Application<br>/2023</span>
+                                <svg class="item__svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="arcs"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                            </a>
+                        </div>
+                        <hr class="item-line">
+                        <div class="more-items">
+                            <a class="hoverable" href="https://github.com/bautista73" target="_blank" class="more-items-button">More on GitHub<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="arcs"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="overlay">
+                    <div class="overlay__row"></div>
+                    <div class="overlay__row"></div>
+                </div>
+
+<!--PREVIEWS-->
+
+                <div class="previews">
+
+<!--Elmer's Express-->
+                <div class="preview">
+                    <div class="preview__title-wrap">
+                        <div class="preview__img">
+                            <img class="preview__img-inner" src='./assets/1_big-55226c2a.png'>
+                        </div>
+                        <!-- <h2 class="preview__title oh"><span class="oh__inner">Elmer's Express</span></h2> -->
+                    </div>
+
+                    <div class="preview__column-wrap">
+                        <div class="preview__column-wrap-inner">
+                            <div class="preview__column preview__column--start">
+                                <span class="preview__column-title preview__column-title--main oh">
+                                    <span class="oh__inner oh__cap">Web Development <br> <span class="preview__column-title-sub">/2023</span></span>
+                                </span>
+                            </div>
+                            <div class="preview__column">
+                                <h3 class="preview__column-title oh"><span class="oh__inner">Description</span></h3>
+                                <span class="oh__inner inner__sub">I've redesigned and developed the entire website from scratch to create a modern and interactive user experience for customers. The site now has improved responsiveness, menu navigation, and customer feedback pulled from yelp. These improvments have increased site traffic, and a 25% increase in customer contacts.</span>
+                            </div>
+                            <div class="preview__column">
+                                <h3 class="preview__column-title oh"><span class="oh__inner">Technologies</span></h3>
+                                <span class="oh__inner inner__sub">HTML, SCSS, JavaScript, Node, GSAP, Gatsby, Netlify</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="preview__footer-wrap">
+                        <button class="unbutton preview__back hoverable"><svg width="100px" height="18px" viewBox="0 0 50 9"><path vector-effect="non-scaling-stroke" d="m0 4.5 5-3m-5 3 5 3m45-3h-77"></path></svg></button>
+                        <div class="footer-oh-wrap">
+                            <span class="oh">
+                                <a href="https://github.com/bautista73/ElmersExpress" target="_blank" class="oh__inner preview__link hoverable">GitHub
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="arcs"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg> -->
+                                </a>
+                            </span>
+                            <span class="oh">
+                                <a href="http://elmersexpress-demo.netlify.app" target="_blank" class="oh__inner preview__link hoverable">Live Demo
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="arcs"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg> -->
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+<!--NexusMD-->
+                <div class="preview">
+                    <div class="preview__title-wrap">
+                        <div class="preview__img">
+                            <img class="preview__img-inner" src='./assets/2_big-ed8de255.png'>
+                        </div>
+                        <!-- <h2 class="preview__title oh"><span class="oh__inner">NexusMD</span></h2> -->
+                    </div>
+
+                    <div class="preview__column-wrap">
+                        <div class="preview__column-wrap-inner">
+                            <div class="preview__column preview__column--start">
+                                <span class="preview__column-title preview__column-title--main oh">
+                                    <span class="oh__inner oh__cap">Application <br> <span class="preview__column-title-sub">/2023</span></span>
+                                </span>
+                            </div>
+                            <div class="preview__column">
+                                <span class="preview__column-title oh"><span class="oh__inner">Description</span></span>
+                                <span class="oh__inner inner__sub">With NexusMD, my aim was to create a user-friendly and feature-rich solution that streamlines administrative tasks for private practices, ultimately providing an efficient and effective platform for managing patient workflows. The minimalist dashboard design boasts a simple interface for easy navigation and workflow. Currently, we're working on further developing the project to improve scalability and ensure seamless performance as the user base grows.</span>
+                            </div>
+                            <div class="preview__column">
+                                <h3 class="preview__column-title oh"><span class="oh__inner">Technologies</span></h3>
+                                <span class="oh__inner inner__sub">HTML, SCSS, PostCSS, JavaScript, Node, React, GSAP, SQL, Axios, Firebase / Figma, Sketch</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="preview__footer-wrap">
+                        <button class="unbutton preview__back hoverable"><svg width="100px" height="18px" viewBox="0 0 50 9"><path vector-effect="non-scaling-stroke" d="m0 4.5 5-3m-5 3 5 3m45-3h-77"></path></svg></button>
+                        <div class="footer-oh-wrap">
+                            <span class="oh">
+                                <a href="https://github.com/bautista73/Nexus-MD" target="_blank" class="oh__inner preview__link hoverable">GitHub
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="arcs"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg> -->
+                                </a>
+                            </span>
+                            <span class="oh">
+                                <a href="#" class="oh__inner preview__link hoverable">Demo Coming Soon
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="arcs"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg> -->
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+<!--MarbleFlow-->
+                <div class="preview">
+                    <div class="preview__title-wrap">
+                        <div class="preview__img">
+                            <img class="preview__img-inner" src='./assets/3_big-c229f903.png'>
+                        </div>
+                        <h2 class="preview__title oh"><span class="oh__inner item__black">MarbleFlow</span></h2>
+                    </div>
+
+                    <div class="preview__column-wrap">
+                        <div class="preview__column-wrap-inner">
+                            <div class="preview__column preview__column--start">
+                                <span class="preview__column-title preview__column-title--main oh">
+                                    <span class="oh__inner oh__cap">Application <br> <span class="preview__column-title-sub">/2023</span></span>
+                                </span>
+                            </div>
+                            <div class="preview__column">
+                                <h3 class="preview__column-title oh"><span class="oh__inner">Description</span></h3>
+                                <span class="oh__inner inner__sub">My aim with MarbleFlow is to create a unique productivity app that not only helps users stay focused but also provides them with valuable insights into their work habits. The app features a visual representation of productive time using a jar filled with marbles, and future features such as a customizable jar and marbles, and a mobile app version will provide users with even more ways to stay engaged. Currently, we're developing the app to improve its performance and user experience.</span>
+                            </div>
+                            <div class="preview__column">
+                                <h3 class="preview__column-title oh"><span class="oh__inner">Technologies</span></h3>
+                                <span class="oh__inner inner__sub">HTML, SCSS, JavaScript, Node, React, GSAP, ThreeJS, ExpressJS, Firebase / Figma / Vercel</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="preview__footer-wrap">
+                        <button class="unbutton preview__back hoverable"><svg width="100px" height="18px" viewBox="0 0 50 9"><path vector-effect="non-scaling-stroke" d="m0 4.5 5-3m-5 3 5 3m45-3h-77"></path></svg></button>
+                        <div class="footer-oh-wrap">
+                            <span class="oh">
+                                <a href="#" class="oh__inner preview__link hoverable">Coming Soon</a>
+                            </span>
+                            <!-- <span class="oh">
+                                <a href="#" class="oh__inner preview__link hoverable">Live Site<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="arcs"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+                            </span> -->
+                        </div>
+                    </div>
+                </div>
+<!--Desk & Club-->
+                <div class="preview">
+                    <div class="preview__title-wrap">
+                        <div class="preview__img">
+                            <img class="preview__img-inner" src='./assets/9_big-800d57f4.png'>
+                        </div>
+                        <!-- <h2 class="preview__title oh"><span class="oh__inner">Desk & Club</span></h2> -->
+                    </div>
+
+                    <div class="preview__column-wrap">
+                        <div class="preview__column-wrap-inner">
+                            <div class="preview__column preview__column--start">
+                                <span class="preview__column-title preview__column-title--main oh">
+                                    <span class="oh__inner oh__cap">Web Development <br> <span class="preview__column-title-sub">/2023</span></span>
+                                </span>
+                            </div>
+                            <div class="preview__column">
+                                <h3 class="preview__column-title oh"><span class="oh__inner">Description</span></h3>
+                                <span class="oh__inner inner__sub">Desk & Club is a project that I spearheaded to showcase the best modern, minimal, and creative desk setups. The blog provides inspiration and ideas for creating functional and aesthetically pleasing workspaces, with a carefully curated collection of setups that I personally selected. I'm currently updating the site with new content and continuously improving the user experience.</span>
+                            </div>
+                            <div class="preview__column">
+                                <h3 class="preview__column-title oh"><span class="oh__inner">Technologies</span></h3>
+                                <span class="oh__inner inner__sub">HTML, SCSS, JavaScript, Vue, Node, GSAP / Gatsby, Netlify</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="preview__footer-wrap">
+                        <button class="unbutton preview__back hoverable"><svg width="100px" height="18px" viewBox="0 0 50 9"><path vector-effect="non-scaling-stroke" d="m0 4.5 5-3m-5 3 5 3m45-3h-77"></path></svg></button>
+                        <div class="footer-oh-wrap">
+                            <span class="oh">
+                                <a href="#" class="oh__inner preview__link hoverable">Coming Soon</a>
+                            </span>
+                            <!-- <span class="oh">
+                                <a href="#" class="oh__inner preview__link hoverable">Live Site<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="arcs"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+                            </span> -->
+                        </div>
+                    </div>
+                </div>
+<!--Liftify-->
+                <div class="preview">
+                    <div class="preview__title-wrap">
+                        <div class="preview__img">
+                            <img class="preview__img-inner" src='./assets/9_big-800d57f4.png'>
+                        </div>
+                        <!-- <h2 class="preview__title oh"><span class="oh__inner">Liftify</span></h2> -->
+                    </div>
+
+                    <div class="preview__column-wrap">
+                        <div class="preview__column-wrap-inner">
+                            <div class="preview__column preview__column--start">
+                                <span class="preview__column-title preview__column-title--main oh">
+                                    <span class="oh__inner oh__cap">Application <br> <span class="preview__column-title-sub">/2023</span></span>
+                                </span>
+                            </div>
+                            <div class="preview__column">
+                                <h3 class="preview__column-title oh"><span class="oh__inner">Description</span></h3>
+                                <span class="oh__inner inner__sub">Liftify is a weightlifting companion app that I designed to provide weightlifters with a simple and effective tool to track their progress. The app includes essential features such as rep, set, and weight tracking, as well as customizable timers and progress charts that provide valuable insights into their workout routine. it is designed with simplicity and ease of use in mind, allowing users to focus on their lifting progress.</span>
+                            </div>
+                            <div class="preview__column">
+                                <h3 class="preview__column-title oh"><span class="oh__inner">Technologies</span></h3>
+                                <span class="oh__inner inner__sub">Flutter SDK, Dart, Firebase, SQLite, Provider</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="preview__footer-wrap">
+                        <button class="unbutton preview__back hoverable"><svg width="100px" height="18px" viewBox="0 0 50 9"><path vector-effect="non-scaling-stroke" d="m0 4.5 5-3m-5 3 5 3m45-3h-77"></path></svg></button>
+                        <div class="footer-oh-wrap">
+                            <span class="oh">
+                                <a href="#" class="oh__inner preview__link hoverable">Coming Soon</a>
+                            </span>
+                            <!-- <span class="oh">
+                                <a href="#" class="oh__inner preview__link hoverable">Live Site<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="arcs"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+                            </span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab3" class="tab-content">
+            <div class="info-wrapper">
+                <div class="info">
+                    <!-- <h4 class="info__title">About</h4> -->
+                    <div class="info__about">
+                        <!-- <h4 class="info__title">Bio</h4> -->
+                        <div class="p-wrapper">
+                            <p class="p-wrapper__text">My name is Brandon Bautista. I'm an Indianapolis based front-end software engineer and freelance web developer, with roots in sales and marketing. I specialize in web design, user experience, and visual development.</p>
+                            <p class="p-wrapper__text">Currently, I'm a full-time freelance developer, collaborating with clients across different industries to realize their digital ambitions. I provide tailored digital solutions that enable businesses of any scale to improve their online visibility and achieve their specific objectives.</p>
+                            <p class="p-wrapper__text">Staying up to date with the latest industry trends and technologies is a top priority of mine. This helps me bring fresh ideas and efficient solutions to every project, ensuring high-quality results. Below are technologies I've been working with frequently:</p>
+                        </div>
+                    </div>
+                    <div class="info__tech">
+                        <!-- <h4 class="info__title">Stack</h4> -->
+                        <div class="info__tech__wrap">
+                            <!-- <h6 class="info__tech__wrap__sub-top">Languages</h6> -->
+                            <!-- <h4 class="info__title">Technologies</h4> -->
+                            <div class="info__tech__wrap__row">
+                                <span>HTML5</span>
+                                <span>SCSS</span>
+                                <span>JavaScript</span>
+                                <span>TypeScript</span>
+                                <span>C#</span>
+                                <span>Dart</span>
+                            </div>
+                            <!-- <h6 class="info__tech__wrap__sub">Frameworks & Libraries</h6> -->
+                            <div class="info__tech__wrap__row">   
+                                <span>React</span>
+                                <span>NextJS</span>
+                                <span>ThreeJS</span>
+                                <span>GSAP</span>
+                                <span>JQuery</span>
+                                <span>Flutter</span>
+                                <span>Firebase</span>
+                            </div>
+                            <div class="info__tech__wrap__row">   
+                                <span>Figma</span>
+                                <span>Sketch</span>
+                                <span>Photoshop</span>
+                                <span>Netlify</span>
+                                <span>Vercel</span>
+                                <span>Heroku</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info__contact">
+                        <!-- <h4 class="info__title">Contact</h4> -->
+                        <div class="info__contact__wrap">
+                            <div class="info__contact__wrap__email">
+                                <h6 class="info__contact__wrap__email__sub">Seeking new challenges<br> let's discuss potential opportunities.</h6>
+                            </div>
+                            <div class="info__contact__wrap__links">
+                                <div class="button-wrap"><a class="hoverable" href="mailto:hello@brandonbautista.dev">E-mail</a></div>
+                                <div class="button-wrap"><a class="hoverable" href="/Resume.pdf" target="_blank">View Resume</a></div>
+                            </div>
+                            <div class="info__contact__wrap__socials">
+                                <div class="button-wrap"><a class="hoverable" href="https://www.linkedin.com/in/b-bautista/" target="_blank">LinkedIn</a></div>
+                                <div class="button-wrap"><a class="hoverable" href="https://github.com/bautista73" target="_blank">GitHub</a></div>
+                                <div class="button-wrap"><a class="hoverable" href="https://www.instagram.com/_bbautista_/" target="_blank">Instagram</a></div>
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="arcs"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg> -->
+                            </div> 
+                        </div>
+                    </div>                  
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    
+    
+</body>
+</html>
